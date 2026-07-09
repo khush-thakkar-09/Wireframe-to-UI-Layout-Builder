@@ -1,0 +1,26 @@
+# Dependency directories
+node_modules/
+
+# Build outputs
+dist/
+
+# Large Model files (ONNX, PyTorch)
+*.onnx
+*.pth
+*.ckpt
+dist_model/
+
+# Local configuration and credentials
+.env
+.env.local
+.env.*.local
+
+# Local run outputs & assets
+output/
+
+# Cache directories
+.cache/
+
+# OS metadata
+.DS_Store
+Thumbs.db
