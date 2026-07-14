@@ -7,24 +7,34 @@ import type { VlmResult } from "../types/index.js";
 // Initialize Bedrock client with explicit API Key from our configuration
 const bedrockProvider = createAmazonBedrock({
   apiKey: env.qwenApiKey,
-  region: "ap-south-1",
+  region: "us-east-1",
 });
 
 /**
- * Invokes the Qwen VLM model on Amazon Bedrock to get a description and sub-type for a cropped UI element.
+ * Invokes the Qwen VLM model on Amazon Bedrock to classify and describe a cropped UI element.
  */
-export async function describeElement(cropBuffer: Buffer, detrClass: string): Promise<VlmResult> {
+export async function classifyAndDescribeElement(cropBuffer: Buffer): Promise<VlmResult> {
   const modelId = env.qwenVlm || "qwen.qwen3-vl-235b-a22b";
 
-  const prompt = `You are a UI annotation assistant.
-Analyze this cropped image, which was classified as a "${detrClass}" component.
-Identify its sub-type (e.g. for Icon_Button: "search icon", "hamburger menu icon", "close icon", "cart icon". For Visual_Element: "product image", "promotional banner", "user avatar", "company logo", etc.)
-Provide a one-sentence descriptive label.
+  const prompt = `You are a expert UI annotation assistant.
+Analyze this cropped image from a website screenshot.
+Your task is to identify the type (class) of this UI element and provide a one-sentence description of what it looks like and its text/icon content.
+
+Use a flexible, natural language vocabulary for classification. Examples include:
+- "logo" (e.g., brand icon, company logo)
+- "navigation_link" (e.g., Home, Connect, About links)
+- "cta_button" (e.g., 'FIND A WORKOUT', 'Get Started')
+- "login_button" or "action_button"
+- "input_field" or "search_bar"
+- "promotional_banner" or "hero_image"
+- "icon" or "social_icon"
+- "text_heading" or "text_paragraph"
+- "card" or "container"
 
 You MUST reply ONLY with a valid JSON block of this schema:
 {
-  "description": "one sentence describing the visual content",
-  "subType": "specific sub-type name"
+  "class": "natural_language_class_name",
+  "description": "one sentence describing the visual content, color, text or icons present"
 }
 Do not wrap your answer in markdown codeblocks (no \`\`\`json). Just return raw JSON.`;
 
@@ -57,14 +67,14 @@ Do not wrap your answer in markdown codeblocks (no \`\`\`json). Just return raw 
 
     const parsedJson = JSON.parse(cleanedText);
     return {
-      description: parsedJson.description ?? `A ${detrClass} component`,
-      subType: parsedJson.subType ?? detrClass,
+      class: parsedJson.class ?? "unknown",
+      description: parsedJson.description ?? "A UI component",
     };
   } catch (error) {
-    logger.warn("VLM Service", `VLM description generation failed: ${(error as Error).message}. Returning fallback.`);
+    logger.warn("VLM Service", `VLM classification/description generation failed: ${(error as Error).message}. Returning fallback.`);
     return {
-      description: `A ${detrClass} component`,
-      subType: detrClass,
+      class: "unknown",
+      description: "A UI component",
     };
   }
 }

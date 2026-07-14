@@ -1,0 +1,94 @@
+{
+  "logo": {
+    "fieldId": "1234567890",
+    "content": "HRX"
+  },
+  "logoTrademark": {
+    "fieldId": "2345678901",
+    "content": "®"
+  },
+  "homeLink": {
+    "fieldId": "3456789012",
+    "content": "Home"
+  },
+  "communityLink": {
+    "fieldId": "4567890123",
+    "content": "Community"
+  },
+  "pressReleaseLink": {
+    "fieldId": "5678901234",
+    "content": "Press Release"
+  },
+  "blogLink": {
+    "fieldId": "6789012345",
+    "content": "Blog"
+  },
+  "collectionLink": {
+    "fieldId": "7890123456",
+    "content": "Collection"
+  },
+  "connectLink": {
+    "fieldId": "8901234567",
+    "content": "Connect"
+  },
+  "loginButton": {
+    "fieldId": "9012345678",
+    "content": "Login"
+  },
+  "shoppingBagIcon": {
+    "fieldId": "0123456789",
+    "content": ""
+  },
+  "heroSubtitle": {
+    "fieldId": "1122334455",
+    "content": "HRX MIND FUEL"
+  },
+  "heroTitle": {
+    "fieldId": "2233445566",
+    "content": "CHALLENGE YOUR LIMITS"
+  },
+  "heroDescription": {
+    "fieldId": "3344556677",
+    "content": "Take control of your fitness journey with HRX workout sessions led by expert trainers. Experience the power of motivation and transform your body and mind."
+  },
+  "ctaButton": {
+    "fieldId": "4455667788",
+    "content": "FIND A WORKOUT"
+  },
+  "heroImage": {
+    "fieldId": "5566778899",
+    "content": "https://placehold.co/1200x800/1a1a1a/ffffff?text=HRX+Athlete"
+  },
+  "stat1Number": {
+    "fieldId": "6677889900",
+    "content": "0+"
+  },
+  "stat1Label": {
+    "fieldId": "7788990011",
+    "content": "Community Members"
+  },
+  "stat2Number": {
+    "fieldId": "8899001122",
+    "content": "40+"
+  },
+  "stat2Label": {
+    "fieldId": "9900112233",
+    "content": "Fitness Programmes"
+  },
+  "stat3Number": {
+    "fieldId": "0011223344",
+    "content": "150+"
+  },
+  "stat3Label": {
+    "fieldId": "1122334455",
+    "content": "Fitness channels"
+  },
+  "eventTitle": {
+    "fieldId": "2233445566",
+    "content": "International YOGA DAY celebration"
+  },
+  "eventLocation": {
+    "fieldId": "3344556677",
+    "content": "DUBLIN SQUARE"
+  }
+}

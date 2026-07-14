@@ -18,8 +18,8 @@ export interface RawDetection {
 /** Processed detection output after format normalization and filtering */
 export interface ProcessedDetection {
   boundingBox: BoundingBox;
-  detrClass: string;
-  detrConfidence: number;
+  elementClass: string;
+  detectionConfidence: number;
 }
 
 /** Image fidelity classification */
@@ -46,21 +46,15 @@ export interface PreprocessResult {
   outputPath?: string;
 }
 
-/** OCR Extraction Result */
-export interface OcrResult {
-  text: string;
-}
-
 /** VLM Generation Result */
 export interface VlmResult {
   description: string;
-  subType: string;
+  class: string;
 }
 
 /** Enriched component detection */
 export interface EnrichedDetection extends ProcessedDetection {
   id: string;
-  ocr?: OcrResult;
   vlm?: VlmResult;
 }
 

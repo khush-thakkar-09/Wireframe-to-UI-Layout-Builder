@@ -39,8 +39,7 @@ program
       }
       console.log(`│  Detections:    ${String(result.detections.length).padEnd(22)} │`);
       console.log(`│  Enriched:      ${String(result.enrichedDetections.length).padEnd(22)} │`);
-      console.log(`│  CMS Elements:  ${String(result.cmsSchema.elements.length).padEnd(22)} │`);
-      console.log(`│  CMS Sect. ID:  ${String(result.cmsSchema.metadata.sectionId).padEnd(22)} │`);
+      console.log(`│  React Path:    ${path.basename(result.testingReactPath).padEnd(22)} │`);
       console.log("└─────────────────────────────────────────┘\n");
     } catch (err) {
       logger.error("Pipeline", `Pipeline execution failed: ${(err as Error).message}`);

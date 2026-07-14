@@ -30,7 +30,7 @@ function calculateIoU(boxA: ProcessedDetection["boundingBox"], boxB: ProcessedDe
  */
 export function applyNMS(detections: ProcessedDetection[], iouThreshold = 0.5): ProcessedDetection[] {
   // Sort by confidence score descending
-  const sorted = [...detections].sort((a, b) => b.detrConfidence - a.detrConfidence);
+  const sorted = [...detections].sort((a, b) => b.detectionConfidence - a.detectionConfidence);
   const keep: ProcessedDetection[] = [];
 
   while (sorted.length > 0) {

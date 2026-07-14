@@ -25,8 +25,8 @@ export function postprocessDetections(rawDetections: RawDetection[]): ProcessedD
         width: Math.round(w),
         height: Math.round(h),
       },
-      detrClass: raw.class,
-      detrConfidence: raw.confidence,
+      elementClass: raw.class,
+      detectionConfidence: raw.confidence,
     });
   }
 

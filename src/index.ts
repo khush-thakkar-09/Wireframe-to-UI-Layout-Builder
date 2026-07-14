@@ -8,8 +8,9 @@ import { detectElements } from "./detection/detr-client.js";
 import { postprocessDetections } from "./detection/postprocessor.js";
 import { enrichDetections } from "./enrichment/enrichment-router.js";
 import { buildLayoutTree } from "./layout/layout-builder.js";
-import { generateCmsSchema, type CmsSchema } from "./cms/cms-generator.js";
-import { connectToMongoDB, disconnectFromMongoDB } from "./database/mongo.js";
+import { identifySections } from "./sections/section-identifier.js";
+import { generateSectionCode } from "./codegen/coding-agent.js";
+import { synthesizeApp } from "./codegen/synthesizer.js";
 import type { FidelityResult, PreprocessResult, ProcessedDetection, EnrichedDetection, LayoutNode } from "./types/index.js";
 
 /** Result from running the pipeline */
@@ -19,17 +20,11 @@ export interface PipelineResult {
   detections: ProcessedDetection[];
   enrichedDetections: EnrichedDetection[];
   layoutTree: LayoutNode[];
-  cmsSchema: CmsSchema;
+  testingReactPath: string;
 }
 
 /**
  * Run the full pipeline on a single image.
- * Implements:
- * - Phase 1 & 2: Fidelity assessment + conditional preprocessing
- * - Phase 3: RF-DETR object detection + NMS post-processing + Bounding Box visualization output
- * - Phase 4: Class-specific element enrichment (PaddleOCR & Qwen3-VL VLM)
- * - Phase 5: Structural layout and hierarchical nesting tree builder
- * - Phase 6: CMS Schema generation using Qwen3 Coder & saving to MongoDB cluster
  */
 export async function runPipeline(imagePath: string, outputDir: string): Promise<PipelineResult> {
   const absoluteImagePath = path.resolve(imagePath);
@@ -50,13 +45,12 @@ export async function runPipeline(imagePath: string, outputDir: string): Promise
   }
   fs.mkdirSync(absoluteOutputDir, { recursive: true });
 
-
   // ─── Phase 2: Fidelity Assessment ────────────────────────────────
+  logger.info("Pipeline", "Initiating Phase 2: Fidelity assessment...");
   const fidelity = await assessFidelity(absoluteImagePath);
 
   // ─── Phase 2: Conditional Preprocessing ──────────────────────────
   let preprocess: PreprocessResult;
-
   if (fidelity.fidelity === "LOW") {
     preprocess = await preprocessImage(absoluteImagePath, absoluteOutputDir);
   } else {
@@ -74,34 +68,21 @@ export async function runPipeline(imagePath: string, outputDir: string): Promise
   // Detect elements from preprocessed image buffer
   const rawDetections = await detectElements(preprocess.imageBuffer);
   
-  // Apply filtering (confidence threshold 0.4) and NMS
+  // Apply filtering (confidence threshold 0.35) and NMS
   const detections = postprocessDetections(rawDetections);
-
-  // Ensure output directory exists
-  if (!fs.existsSync(absoluteOutputDir)) {
-    fs.mkdirSync(absoluteOutputDir, { recursive: true });
-  }
 
   // Get dimensions of the preprocessed image to draw correctly
   const metadata = await sharp(preprocess.imageBuffer).metadata();
   const width = metadata.width ?? 800;
   const height = metadata.height ?? 600;
 
-  // Create SVG overlay containing bounding boxes, class labels, and confidence scores
+  // Create SVG overlay containing bounding boxes and confidence scores
   let svgContent = `<svg width="${width}" height="${height}">`;
 
   for (const det of detections) {
     const { x, y, width: w, height: h } = det.boundingBox;
-    const label = `${det.detrClass} (${(det.detrConfidence * 100).toFixed(0)}%)`;
-    
-    // Choose a color based on the class for better visual distinction
-    let color = "red";
-    if (det.detrClass === "Action_Button") color = "#00ff00"; // Green
-    else if (det.detrClass === "Icon_Button") color = "#00ffff"; // Cyan
-    else if (det.detrClass === "Input_Container") color = "#ff00ff"; // Magenta
-    else if (det.detrClass === "Navigation_Tab") color = "#ffff00"; // Yellow
-    else if (det.detrClass === "Text_Display") color = "#ff9900"; // Orange
-    else if (det.detrClass === "Visual_Element") color = "#3366ff"; // Blue
+    const label = `${det.elementClass} (${(det.detectionConfidence * 100).toFixed(0)}%)`;
+    const color = "#3366ff"; // Standard blue bounding box for class-agnostic elements
 
     // Bounding Box Rectangle
     svgContent += `
@@ -119,8 +100,6 @@ export async function runPipeline(imagePath: string, outputDir: string): Promise
     const fontSize = 14;
     const labelWidth = label.length * 8.5;
     const labelHeight = 20;
-
-    // Draw label background (adjust Y so it draws inside the box if near the top edge)
     const labelY = y - labelHeight >= 0 ? y - labelHeight : y;
     
     svgContent += `
@@ -137,7 +116,7 @@ export async function runPipeline(imagePath: string, outputDir: string): Promise
         font-family="monospace, sans-serif" 
         font-size="${fontSize}px" 
         font-weight="bold"
-        fill="black"
+        fill="white"
       >${label}</text>`;
   }
 
@@ -155,13 +134,10 @@ export async function runPipeline(imagePath: string, outputDir: string): Promise
     `Phase 3 completed successfully: Detected ${detections.length} elements. Visualized image saved to: ${visualizationOutputPath}`
   );
 
-  // ─── Phase 4: Class-Specific Element Enrichment ──────────────────────
-  logger.info("Pipeline", "Initiating Phase 4: Class-specific element enrichment...");
-  
-  // Enrich detections (crops and JSON metadata are saved to outputDir/crops/ locally in enrichDetections)
+  // ─── Phase 4: VLM Classification ────────────────────────────────
+  logger.info("Pipeline", "Initiating Phase 4: VLM classification...");
   const enrichedDetections = await enrichDetections(detections, preprocess.imageBuffer, absoluteOutputDir);
 
-  // Save the master enriched list to output folder as a reference point for next phases
   const masterEnrichedPath = path.join(absoluteOutputDir, "enriched_detections.json");
   fs.writeFileSync(masterEnrichedPath, JSON.stringify(enrichedDetections, null, 2), "utf-8");
 
@@ -172,10 +148,8 @@ export async function runPipeline(imagePath: string, outputDir: string): Promise
 
   // ─── Phase 5: Hierarchical Structural Representation ──────────────────
   logger.info("Pipeline", "Initiating Phase 5: Structural representation and nesting...");
-
   const layoutTree = buildLayoutTree(enrichedDetections);
 
-  // Save structural layout tree output
   const treeOutputPath = path.join(absoluteOutputDir, "layout_tree.json");
   fs.writeFileSync(treeOutputPath, JSON.stringify(layoutTree, null, 2), "utf-8");
 
@@ -184,68 +158,41 @@ export async function runPipeline(imagePath: string, outputDir: string): Promise
     `Phase 5 completed successfully: Created layout hierarchy. Layout tree saved to: ${treeOutputPath}`
   );
 
-  // ─── Phase 6: CMS Schema Design & Database Save ────────────────────────
-  logger.info("Pipeline", "Initiating Phase 6: CMS schema generation & MongoDB save...");
+  // ─── Phase 6: Section Identification ─────────────────────────────────
+  logger.info("Pipeline", "Initiating Phase 6: Section identification grouping...");
+  const sections = await identifySections(layoutTree, preprocess.imageBuffer);
 
-  // Generate CMS Schema
-  const sectionName = path.basename(absoluteImagePath, path.extname(absoluteImagePath));
-  const cmsSchema = await generateCmsSchema(
-    layoutTree,
-    sectionName,
-    "home",
-    "verification",
-    6 // Index default placeholder
-  );
-
-  // Save CMS json output file locally
-  const cmsOutputPath = path.join(absoluteOutputDir, "cms_schema.json");
-  fs.writeFileSync(cmsOutputPath, JSON.stringify(cmsSchema, null, 2), "utf-8");
-
-  logger.info("Pipeline", `Saving CMS schema configuration to MongoDB database...`);
-
-  // Connect to cluster, write metadata + elements, and terminate connection cleanly
-  const dbClient = await connectToMongoDB();
-  if (dbClient) {
-    try {
-      const db = dbClient.db("wireframe-to-layout");
-
-      // Save Metadata Config
-      const metadataCol = db.collection("section-metadata");
-      await metadataCol.updateOne(
-        { sectionId: cmsSchema.metadata.sectionId },
-        { $set: cmsSchema.metadata },
-        { upsert: true }
-      );
-      logger.success("MongoDB", "Saved section metadata successfully.");
-
-      // Save Elements Config
-      const elementsCol = db.collection("section-elements");
-      for (const el of cmsSchema.elements) {
-        await elementsCol.updateOne(
-          { fieldId: el.fieldId },
-          { $set: el },
-          { upsert: true }
-        );
-      }
-      logger.success("MongoDB", `Saved ${cmsSchema.elements.length} elements successfully.`);
-    } catch (dbErr) {
-      logger.error("MongoDB", `Failed writing schemas: ${(dbErr as Error).message}`);
-      throw dbErr;
-    } finally {
-      await disconnectFromMongoDB();
-    }
-  }
+  const sectionsOutputPath = path.join(absoluteOutputDir, "sectioned_layout.json");
+  fs.writeFileSync(sectionsOutputPath, JSON.stringify(sections, null, 2), "utf-8");
 
   logger.success(
     "Pipeline",
-    `Phase 6 completed successfully: CMS configuration saved to MongoDB and locally: ${cmsOutputPath}`
+    `Phase 6 completed successfully: Identified ${sections.length} UI sections. Sectioned layout saved to: ${sectionsOutputPath}`
   );
 
-  return { fidelity, preprocess, detections, enrichedDetections, layoutTree, cmsSchema };
+  // ─── Phase 7: Code Generation (Static) ──────────────────────────────
+  logger.info("Pipeline", "Initiating Phase 7: Generating static React components & CSS...");
+  const staticCodes: { jsx: string; css: string }[] = [];
+  for (let idx = 0; idx < sections.length; idx++) {
+    const sect = sections[idx]!;
+    const code = await generateSectionCode(sect, idx + 1);
+    staticCodes.push(code);
+  }
+  logger.success("Pipeline", `Phase 7 completed successfully: Generated code blocks for ${sections.length} sections.`);
+
+  // ─── Phase 8: Synthesize React App ──────────────────────────────────
+  logger.info("Pipeline", "Initiating Phase 8: Synthesizing static React App components and stylesheet...");
+  const testingReactPath = path.resolve(process.cwd(), "testing_react");
+  synthesizeApp(sections, staticCodes, testingReactPath);
+
+  logger.success("Pipeline", `Phase 8 completed successfully: Synthesized static React App to: ${testingReactPath}`);
+
+  return {
+    fidelity,
+    preprocess,
+    detections,
+    enrichedDetections,
+    layoutTree,
+    testingReactPath,
+  };
 }
-
-
-
-
-
-

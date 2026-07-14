@@ -2,13 +2,12 @@ import path from "path";
 import fs from "fs";
 import sharp from "sharp";
 import { cropBoundingBox } from "./cropper.js";
-import { extractText, destroyOcrService } from "./ocr-service.js";
-import { describeElement } from "./vlm-service.js";
+import { batchClassifyElements } from "./batch-vlm-classifier.js";
 import { logger } from "../utils/logger.js";
 import type { ProcessedDetection, EnrichedDetection } from "../types/index.js";
 
 /**
- * Route components to their class-specific enrichment flow.
+ * Perform VLM enrichment for all detected bounding boxes in parallel batches.
  * Save individual cropped parts and their respective output to folder for verification and testing.
  */
 export async function enrichDetections(
@@ -16,7 +15,7 @@ export async function enrichDetections(
   originalImageBuffer: Buffer,
   outputDir: string
 ): Promise<EnrichedDetection[]> {
-  logger.info("Enrichment Router", `Beginning enrichment process for ${detections.length} elements...`);
+  logger.info("Enrichment Router", `Beginning class-agnostic VLM enrichment for ${detections.length} elements...`);
 
   // Create crop test output folder inside the specified output directory
   const cropOutputDir = path.join(outputDir, "crops");
@@ -24,15 +23,15 @@ export async function enrichDetections(
     fs.mkdirSync(cropOutputDir, { recursive: true });
   }
 
+  const batchItems: { id: string; buffer: Buffer }[] = [];
   const enrichedDetections: EnrichedDetection[] = [];
 
-  // Iterate sequentially to avoid overwhelming Bedrock/ONNX APIs in parallel
+  // 1. Crop all components first
   for (let idx = 0; idx < detections.length; idx++) {
     const det = detections[idx]!;
     const elementId = `element_${idx + 1}`;
-    logger.info("Enrichment Router", `Processing ${elementId} (${det.detrClass})...`);
-
-    // 1. Crop part from original image buffer
+    
+    // Crop part from original image buffer
     const cropBuffer = await cropBoundingBox(originalImageBuffer, det.boundingBox);
 
     // Save cropped image for testing/debugging
@@ -40,44 +39,50 @@ export async function enrichDetections(
     const cropImagePath = path.join(cropOutputDir, cropImageFilename);
     await sharp(cropBuffer).toFile(cropImagePath);
 
-    const enriched: EnrichedDetection = {
+    batchItems.push({
+      id: elementId,
+      buffer: cropBuffer,
+    });
+
+    enrichedDetections.push({
       ...det,
       id: elementId,
-    };
+    });
+  }
 
-    let detailsOutput: any = {};
+  // 2. Perform batched classification in parallel chunks
+  const classificationResults = await batchClassifyElements(batchItems, 8);
 
-    // 2. Class specific routing logic
-    if (det.detrClass === "Navigation_Tab" || det.detrClass === "Text_Display") {
-      // OCR Route
-      logger.debug("Enrichment Router", `Routing ${elementId} to PaddleOCR...`);
-      const ocrResult = await extractText(cropBuffer);
-      enriched.ocr = ocrResult;
-      detailsOutput = { ocr: ocrResult };
-    } else if (det.detrClass === "Icon_Button" || det.detrClass === "Visual_Element") {
-      // VLM Route
-      logger.debug("Enrichment Router", `Routing ${elementId} to Qwen3-VL VLM...`);
-      const vlmResult = await describeElement(cropBuffer, det.detrClass);
+  // 3. Map classification details back and save crop metadata JSONs
+  for (const enriched of enrichedDetections) {
+    const vlmResult = classificationResults.get(enriched.id);
+    if (vlmResult) {
       enriched.vlm = vlmResult;
-      detailsOutput = { vlm: vlmResult };
-    } else {
-      // Action_Button and Input_Container - no separate enrichment as per dataset structure comments
-      logger.debug("Enrichment Router", `Skipping enrichment for ${elementId} (${det.detrClass})`);
-      detailsOutput = { skipped: true };
+      // Overwrite raw "unknown" detection class with the natural language class returned by VLM
+      enriched.elementClass = vlmResult.class;
     }
 
     // Save corresponding JSON output for the crop
-    const jsonOutputFilename = `${elementId}_output.json`;
+    const jsonOutputFilename = `${enriched.id}_output.json`;
     const jsonOutputPath = path.join(cropOutputDir, jsonOutputFilename);
-    fs.writeFileSync(jsonOutputPath, JSON.stringify({ id: elementId, class: det.detrClass, ...detailsOutput }, null, 2), "utf-8");
-
-    enrichedDetections.push(enriched);
+    fs.writeFileSync(
+      jsonOutputPath,
+      JSON.stringify(
+        {
+          id: enriched.id,
+          class: enriched.elementClass,
+          description: enriched.vlm?.description,
+          boundingBox: enriched.boundingBox,
+          detectionConfidence: enriched.detectionConfidence,
+        },
+        null,
+        2
+      ),
+      "utf-8"
+    );
   }
-
-  // Gracefully clean up OCR engine resources
-  await destroyOcrService();
 
   logger.success("Enrichment Router", "All components successfully processed and enriched.");
   return enrichedDetections;
 }
-export { destroyOcrService };
+

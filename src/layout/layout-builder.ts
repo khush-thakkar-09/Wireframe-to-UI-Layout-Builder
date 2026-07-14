@@ -36,9 +36,8 @@ function isNested(boxA: BoundingBox, boxB: BoundingBox): boolean {
 
 /**
  * Custom sort comparator for layout components.
- * Sorts primarily by y (descending - top to bottom) and secondarily by x (ascending - left to right).
- * Note: Since you specified descending for Y, elements higher up on the screen (smaller Y) are at the top,
- * which is descending relative to vertical value increase, and X is ascending.
+ * Sorts primarily by y ascending (smaller Y coordinate comes first, matching top-to-bottom layout hierarchy)
+ * and secondarily by x ascending (smaller X coordinate comes first, matching left-to-right).
  */
 export function compareLayoutNodes(a: LayoutNode, b: LayoutNode): number {
   // Top-to-bottom sorting: smaller Y coordinate comes first.

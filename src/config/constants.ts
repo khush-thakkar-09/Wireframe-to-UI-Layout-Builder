@@ -17,4 +17,4 @@ export const FIDELITY = {
  * Confidence threshold for DETR detections.
  * Detections below this are discarded.
  */
-export const DETECTION_CONFIDENCE_THRESHOLD = 0.4;
+export const DETECTION_CONFIDENCE_THRESHOLD = 0.35;
