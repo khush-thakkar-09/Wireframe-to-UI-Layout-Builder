@@ -28,13 +28,16 @@ export async function batchClassifyElements(
 
     const chunkPromises = chunk.map(async (item) => {
       try {
-        const result = await classifyAndDescribeElement(item.buffer);
+        const result = await classifyAndDescribeElement(item.buffer, item.id);
         resultsMap.set(item.id, result);
       } catch (err) {
         logger.error("VLM Batcher", `Failed to process element ${item.id}: ${(err as Error).message}`);
         resultsMap.set(item.id, {
           class: "unknown",
-          description: "A UI component",
+          text_content: "",
+          text_color: "#ffffff",
+          background_color: "transparent",
+          visual_description: "A UI component",
         });
       }
     });

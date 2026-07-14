@@ -48,14 +48,31 @@ export interface PreprocessResult {
 
 /** VLM Generation Result */
 export interface VlmResult {
-  description: string;
+  /** Predefined element class (e.g. "cta_button", "text_heading") */
   class: string;
+  /** Visible text content extracted from the element, if any */
+  text_content: string;
+  /** Foreground / text color in HEX (e.g. "#ffffff") */
+  text_color: string;
+  /** Background color in HEX (e.g. "#ef4444") */
+  background_color: string;
+  /** One-sentence visual description of the element */
+  visual_description: string;
 }
 
 /** Enriched component detection */
 export interface EnrichedDetection extends ProcessedDetection {
   id: string;
   vlm?: VlmResult;
+}
+
+/** Per-section color theme extracted from the original screenshot */
+export interface SectionTheme {
+  background_color: string;
+  primary_text_color: string;
+  secondary_text_color: string;
+  accent_color: string;
+  accent_hover_color: string;
 }
 
 /** Structured tree node representing sorted, nested layout components */

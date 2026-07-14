@@ -61,26 +61,9 @@ ${appComponentBody}
   fs.writeFileSync(path.join(srcPath, "App.jsx"), finalAppJsx, "utf-8");
   logger.success("Synthesizer", "Synthesized App.jsx successfully.");
 
-  // 2. Synthesize index.css combining CSS variables and section styles
-  const themeCss = `/* === Global Theme Variables === */
-:root {
-  --bg-primary: #0b0f19;
-  --bg-secondary: #111827;
-  --bg-tertiary: #1f2937;
-  --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
-  --accent-color: #ef4444;
-  --accent-hover: #dc2626;
-  --font-family: 'Outfit', sans-serif;
-  --font-heading: 'Space Grotesk', sans-serif;
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 32px;
-  --spacing-xl: 64px;
-  --border-radius: 8px;
-  --border-radius-lg: 16px;
-}
+  // 2. Synthesize index.css combining a minimal global reset and section styles
+  const themeCss = `/* === Global Reset & Typography === */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -89,11 +72,11 @@ ${appComponentBody}
 }
 
 body {
-  font-family: var(--font-family), system-ui, -apple-system, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* === Section Layout Styles === */

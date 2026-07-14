@@ -1,121 +1,138 @@
 import React, { useMemo, useState } from 'react';
 import './index.css';
 
-function NavigationBar() {
-  return (
-    <section className="section-1">
-      <nav className="nav-container">
-        <div className="nav-left">
-          <a href="#" className="logo-link">
-            <div className="logo">
-              <span className="logo-text">HRX</span>
-              <svg className="checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 6L9 17L4 12" stroke="#EF4444" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="trademark">®</span>
-            </div>
-          </a>
-        </div>
-
-        <div className="nav-center">
-          <ul className="nav-links">
-            <li><a href="#" className="nav-link nav-link-home">Home</a></li>
-            <li><a href="#" className="nav-link">Collection</a></li>
-            <li><a href="#" className="nav-link">Connect</a></li>
-            <li><a href="#" className="nav-link">Community</a></li>
-            <li><a href="#" className="nav-link">Blog</a></li>
-            <li><a href="#" className="nav-link">Press Release</a></li>
-          </ul>
-        </div>
-
-        <div className="nav-right">
-          <button className="login-btn">Login</button>
-          <div className="shopping-bag-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 2H18V6H6V2Z" fill="white"/>
-              <path d="M4 6H20V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6Z" fill="white"/>
-              <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="white"/>
-              <path d="M8 6V4C8 3.44772 8.44772 3 9 3H15C15.5523 3 16 3.44772 16 4V6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
-          </div>
-        </div>
-      </nav>
-    </section>
-  );
-}
-
 function HeroSection() {
   return (
-    <section className="section-2">
-      <div className="hero-container">
-        {/* Left Side: Hero Image */}
-        <div className="hero-image-wrapper">
-          <div className="hero-image">
-            <img 
-              src="https://placehold.co/600x800/1f2937/ef4444?text=Muscular+Man+with+Dumbbells" 
-              alt="Muscular man holding dumbbells" 
-              className="hero-img"
-            />
-            <div className="hero-overlay"></div>
-          </div>
-        </div>
-
-        {/* Right Side: Content */}
-        <div className="hero-content">
-          <div className="hero-text">
-            <div className="hero-subtitle">
-              <span className="accent-text">HRX MIND FUEL</span>
-            </div>
-            <h1 className="hero-heading">CHALLENGE YOUR LIMITS</h1>
-            <p className="hero-paragraph">
-              Take control of your fitness journey with expert-led HRX workout sessions. 
-              Train with the best trainers and unlock your true potential.
-            </p>
-          </div>
-
-          {/* Statistics Grid */}
-          <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-number">0+</div>
-              <div className="stat-label">Community Members</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">40+</div>
-              <div className="stat-label">Fitness Programmes</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">150+</div>
-              <div className="stat-label">Fitness channels</div>
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <button className="cta-button">
-            FIND A WORKOUT
-          </button>
-        </div>
+    <section className="section-1">
+      <div className="hero-content">
+        <h2 className="hero-subheading">NHRDN KEY MOMENTS</h2>
+        <h1 className="hero-main-heading">
+          Celebrating milestones and creating
+          <span className="hero-highlight">impact</span>
+        </h1>
       </div>
     </section>
   );
 }
 
-function EventBannerSection() {
+function EventGalleryCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const slides = [
+    {
+      id: 1,
+      image: "https://placehold.co/673x557/ef4444/ffffff?text=Inquizition+2026",
+      caption: "Inquizition 2026",
+      subCaption: "NHRDN INQUIZITION 2026",
+      logo: "NHRD",
+      logoBg: "#fef3c7",
+      logoColor: "#ef4444",
+      textBg: "#fff5e6",
+      textColor: "#5c4033"
+    },
+    {
+      id: 2,
+      image: "https://placehold.co/821x536/ef4444/ffffff?text=Inquizition+2026",
+      caption: "Inquizition 2026",
+      subCaption: "NHRDN INQUIZITION 2026",
+      logo: "NHRD",
+      logoBg: "#fef3c7",
+      logoColor: "#ef4444",
+      textBg: "#fff5e6",
+      textColor: "#5c4033"
+    },
+    {
+      id: 3,
+      image: "https://placehold.co/821x536/ef4444/ffffff?text=NCCL+2026",
+      caption: "NCCL 2026",
+      subCaption: "National Corporate Cricket League",
+      logo: null,
+      logoBg: null,
+      logoColor: null,
+      textBg: "#ffffff",
+      textColor: "#4b5563"
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
   return (
-    <section className="section-3">
-      <div className="container">
-        <div className="banner-content">
-          <div className="event-text-group">
-            <h2 className="main-heading">
-              International 
-              <span className="highlight-text">YOGA DAY</span>
-              <span className="decorative-line" aria-hidden="true">—</span>
-              <span className="sub-text">celebration</span>
-            </h2>
-          </div>
-          
-          <div className="location-badge">
-            <span className="location-text">DUBLIN SQUARE</span>
-          </div>
+    <section className="section-2">
+      <div className="carousel-container">
+        <div className="carousel-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+          {slides.map((slide) => (
+            <div key={slide.id} className="carousel-slide">
+              <div className="slide-image-wrapper">
+                <img src={slide.image} alt={slide.caption} className="slide-image" />
+                <div className="slide-overlay">
+                  <div className="slide-content">
+                    {slide.logo && (
+                      <div 
+                        className="slide-logo" 
+                        style={{ 
+                          backgroundColor: slide.logoBg, 
+                          color: slide.logoColor 
+                        }}
+                      >
+                        {slide.logo}
+                      </div>
+                    )}
+                    <h3 
+                      className="slide-subtitle" 
+                      style={{ 
+                        backgroundColor: slide.textBg, 
+                        color: slide.textColor 
+                      }}
+                    >
+                      {slide.subCaption}
+                    </h3>
+                    <h2 className="slide-title">{slide.caption}</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button 
+          className="carousel-btn prev-btn" 
+          onClick={prevSlide}
+          aria-label="Previous slide"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 19L8 12L15 5" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
+        <button 
+          className="carousel-btn next-btn" 
+          onClick={nextSlide}
+          aria-label="Next slide"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 5L16 12L9 19" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
+        <div className="carousel-dots">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`carousel-dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => goToSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -125,9 +142,8 @@ function EventBannerSection() {
 export default function App() {
   return (
     <main className="app-container">
-      <NavigationBar />
       <HeroSection />
-      <EventBannerSection />
+      <EventGalleryCarousel />
     </main>
   );
 }

@@ -2,8 +2,8 @@ import { createAmazonBedrock } from "@ai-sdk/amazon-bedrock";
 import { generateText } from "ai";
 import { env } from "../config/env.js";
 import { logger } from "../utils/logger.js";
+import { tokenTracker } from "../utils/token-tracker.js";
 import type { Section } from "../sections/section-identifier.js";
-import type { CmsSchema } from "../cms/cms-generator.js";
 
 // Initialize Bedrock client with explicit API Key from our configuration
 // qwen.qwen3-coder-next is available in us-east-1 region
@@ -12,7 +12,7 @@ const bedrockProvider = createAmazonBedrock({
   region: "us-east-1",
 });
 
-export const SECTION_CODER_SYSTEM_PROMPT = `You are an expert frontend React developer specializing in modern, responsive, visually stunning web design. You will be given a detailed description of a single section of a web page and its layout tree elements. Your job is to write the React JSX and CSS code for ONLY this section.
+export const SECTION_CODER_SYSTEM_PROMPT = `You are an expert frontend React developer specializing in modern, responsive, visually stunning web design. You will be given a detailed description of a single section of a web page, its layout tree elements (with per-element styling data), and the section's EXACT color theme. Your job is to write the React JSX and CSS code for ONLY this section.
 
 ### OUTPUT FORMAT (STRICT):
 You MUST output EXACTLY two fenced code blocks. Do NOT use <style> tags.
@@ -39,65 +39,48 @@ export default function {section_component_name}() {
 ### REACT & JSX RULES (THE 3 GOLDEN RULES):
 1. **Single Root Element**: The component must return a single wrapping \`<section>\` element with \`className="section-{section_number}"\`.
 2. **className instead of class**: All HTML classes MUST use \`className\`. Use \`htmlFor\` instead of \`for\`.
-3. **Static Content**: Write clean, hardcoded semantic JSX using realistic placeholder text and visual elements matching the section elements' descriptions. Do NOT use any cmsData prop or variable mapping.
+3. **Static Content**: Write clean, hardcoded semantic JSX using the EXACT text_content values from each element's data. Do NOT use any cmsData prop or variable mapping.
    - Use 'useState' for simple interactive state changes if needed (like accordion toggle or tab selection).
    - Do NOT add any 'id' attribute to the section.
 
 ### CSS RULES:
 1. Scope ALL selectors under .section-{section_number}. Example: \`.section-{section_number} h2 { font-size: 2rem; }\`
 2. NEVER write unscoped global selectors like \`h1 { }\`, \`* { }\`, or \`body { }\`.
-3. **Global Theme (ALREADY DEFINED — USE THESE AS YOUR BASE)**:
-   The following CSS custom properties have been pre-defined globally for the entire page. You should use them as your primary visual foundation (especially for fonts, primary typography colors, and spacing).
+3. **Section Color Theme (USE THESE EXACT COLORS)**:
+   You will receive a "Section Theme" object with EXACT HEX colors extracted from the original design. You MUST use these colors directly in your CSS — NOT through CSS variables, but as literal HEX values in your styles:
+   - **background_color**: Use as the section's main background-color.
+   - **primary_text_color**: Use for headings and primary text.
+   - **secondary_text_color**: Use for body text, labels, and secondary content.
+   - **accent_color**: Use for buttons, links, badges, and highlights.
+   - **accent_hover_color**: Use for hover states on buttons and links.
    
-   **Active Design Tokens:**
-   \`\`\`css
-   :root {
-     --bg-primary: #0b0f19;
-     --bg-secondary: #111827;
-     --bg-tertiary: #1f2937;
-     --text-primary: #f3f4f6;
-     --text-secondary: #9ca3af;
-     --accent-color: #ef4444;
-     --accent-hover: #dc2626;
-     --font-family: 'Outfit', sans-serif;
-     --font-heading: 'Space Grotesk', sans-serif;
-     --spacing-xs: 4px;
-     --spacing-sm: 8px;
-     --spacing-md: 16px;
-     --spacing-lg: 32px;
-     --spacing-xl: 64px;
-     --border-radius: 8px;
-     --border-radius-lg: 16px;
-   }
-   \`\`\`
+   **Per-Element Colors**: Each element in the layout tree also has its own extracted text_color and background_color. Use these for element-specific styling (e.g., a button's own background differs from the section background). When an element has a specific background_color that differs from the section background, apply it directly to that element's CSS class.
    
-   **Variable Reference:**
-   - Colors: var(--bg-primary), var(--bg-secondary), var(--bg-tertiary), var(--text-primary), var(--text-secondary), var(--accent-color), var(--accent-hover)
-   - Typography: var(--font-family), var(--font-heading)
-   - Spacing: var(--spacing-xs), var(--spacing-sm), var(--spacing-md), var(--spacing-lg), var(--spacing-xl)
-   - Borders: var(--border-radius), var(--border-radius-lg)
-   
-   **Design Distinction & Creative Freedom**:
-   - **Section Alternation**: Use either \`var(--bg-primary)\` or \`var(--bg-secondary)\` as the base background for your section wrapper to keep the page visually dynamic and alternate layout segments cleanly.
-   - **Creative Freedom**: You are encouraged to add custom section-specific local styles (such as background gradients, soft color overlays, glassmorphism backdrops, subtle accent borders, or glowing element drop-shadows) using opacity adjustments (e.g., \`rgba()\`, \`hsla()\`) or matching highlight colors to prevent the layout from looking plain or flat. Avoid pure black/white backdrops unless requested.
-4. Make the section fully responsive:
+4. **Typography**: Use font-family: 'Outfit', sans-serif for body text, 'Space Grotesk', sans-serif for headings.
+5. Make the section fully responsive:
    - Mobile-first approach
    - Use @media queries SCOPED under .section-{section_number}
    - Breakpoints: 768px (tablet), 1024px (desktop)
-5. Use modern CSS: flexbox, grid, clamp(), gap, aspect-ratio. No floats.
-6. Write clean, well-structured CSS with logical grouping and comments.
+6. Use modern CSS: flexbox, grid, clamp(), gap, aspect-ratio. No floats.
+7. Write clean, well-structured CSS with logical grouping and comments.
+
+### DUPLICATE DETECTION HANDLING (IMPORTANT):
+The object detection model sometimes produces overlapping bounding boxes — two SAME detections covering nearly the same area. When you see elements in the layout tree that appear to be duplicates (same text_content, overlapping coordinates, same class), you should:
+- **Merge them**: Render the element ONLY ONCE in your JSX output.
+- **BUT preserve valid nested components**: If a parent container genuinely wraps a child element (e.g., a "container_card" containing a "text_heading" inside it), that is NOT a duplicate — render both the container and its child.
+- **Rule of thumb**: If two elements share >80% of the same bounding box area AND have the same or very similar text_content, treat them as duplicates and render only one. If one element clearly contains the other (the parent is significantly larger), keep both as a proper parent-child relationship.
 
 ### DYNAMIC DESIGN & ANIMATIONS:
 1. **Layout Variety**: Avoid boring, flat, vertical stacked blocks. Use creative grid systems, asymmetric layouts (e.g., 60/40 splits, overlapping elements, grid items with varying visual weight), and side-by-side structures where appropriate.
 2. **Micro-interactions**: Every button, link, and interactive card must have smooth hover transitions (\`transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)\`). Use subtle scaling (\`transform: translateY(-4px)\`), card lifting shadows, or glowing outlines on hover.
 3. **CSS Animations**: Use subtle entry animations with CSS keyframes (e.g., fade-in, slide-up, or pulse effects). Ensure all \`@keyframes\` names are unique to this section by prefixing them (e.g., \`@keyframes section-{section_number}-fade-in { ... }\`).
-4. **Depth & Contrast**: Alternate background colors using \`var(--bg-secondary)\` or \`var(--bg-tertiary)\` for card backgrounds or layout subdivisions. Use subtle borders (\`1px solid rgba(255,255,255,0.08)\` or similar) to separate items.
+4. **Depth & Contrast**: Use subtle borders (\`1px solid rgba(255,255,255,0.08)\` or similar) to separate items.
 5. **Text Hierarchy**: Set proper line-height (1.5-1.7 for body, 1.2 for headings) and letter-spacing for premium readability.
 
 ### WHAT NOT TO DO (ANTI-HALLUCINATION):
 - Do NOT reference any external assets, images, logos, or icons from other websites (use \`https://placehold.co/WIDTHxHEIGHT/HEXBG/HEXFG\` or inline SVGs only).
-- Do NOT invent or use CSS variables other than the ones defined in CSS Rules.
 - Do NOT use un-scoped global keyframes or styles.
+- Do NOT invent text — use the exact text_content values provided in the layout tree elements.
 `;
 
 /**
@@ -112,14 +95,21 @@ export async function generateSectionCode(
 
   const modelId = env.qwenCodingModel || "qwen.qwen3-coder-next";
 
-  // Build section description containing layout elements and metadata
+  // Build section description containing layout elements, metadata, and theme colors
   const sectionDescription = `
 Section Name: ${section.section_name}
 Section Number: ${sectionNumber}
 Component Name: ${componentName}
 Detailed Section Description: ${section.section_description}
 
-Section UI Layout Elements:
+Section Theme (EXACT colors from the original design — use these directly):
+  background_color: ${section.theme.background_color}
+  primary_text_color: ${section.theme.primary_text_color}
+  secondary_text_color: ${section.theme.secondary_text_color}
+  accent_color: ${section.theme.accent_color}
+  accent_hover_color: ${section.theme.accent_hover_color}
+
+Section UI Layout Elements (with per-element text_content, text_color, background_color):
 ${JSON.stringify(section.elements, null, 2)}
 `;
 
@@ -131,11 +121,13 @@ ${sectionDescription}
 `;
 
   try {
-    const { text } = await generateText({
+    const { text, usage } = await generateText({
       model: bedrockProvider(modelId),
       prompt: prompt,
       temperature: 0.15,
     });
+
+    tokenTracker.track(`Coding Agent: ${section.section_name}`, modelId, usage, prompt, text, 0, false);
 
     // Parse JSX and CSS blocks using basic regex matches
     const jsxMatch = text.match(/```jsx([\s\S]*?)```/);

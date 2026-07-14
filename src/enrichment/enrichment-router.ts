@@ -71,7 +71,10 @@ export async function enrichDetections(
         {
           id: enriched.id,
           class: enriched.elementClass,
-          description: enriched.vlm?.description,
+          text_content: enriched.vlm?.text_content,
+          text_color: enriched.vlm?.text_color,
+          background_color: enriched.vlm?.background_color,
+          visual_description: enriched.vlm?.visual_description,
           boundingBox: enriched.boundingBox,
           detectionConfidence: enriched.detectionConfidence,
         },

@@ -11,6 +11,7 @@ import { buildLayoutTree } from "./layout/layout-builder.js";
 import { identifySections } from "./sections/section-identifier.js";
 import { generateSectionCode } from "./codegen/coding-agent.js";
 import { synthesizeApp } from "./codegen/synthesizer.js";
+import { tokenTracker } from "./utils/token-tracker.js";
 import type { FidelityResult, PreprocessResult, ProcessedDetection, EnrichedDetection, LayoutNode } from "./types/index.js";
 
 /** Result from running the pipeline */
@@ -27,6 +28,9 @@ export interface PipelineResult {
  * Run the full pipeline on a single image.
  */
 export async function runPipeline(imagePath: string, outputDir: string): Promise<PipelineResult> {
+  // Reset token stats at the start of a fresh run
+  tokenTracker.reset();
+
   const absoluteImagePath = path.resolve(imagePath);
   const absoluteOutputDir = path.resolve(outputDir);
 
@@ -186,6 +190,9 @@ export async function runPipeline(imagePath: string, outputDir: string): Promise
   synthesizeApp(sections, staticCodes, testingReactPath);
 
   logger.success("Pipeline", `Phase 8 completed successfully: Synthesized static React App to: ${testingReactPath}`);
+
+  // Save token report
+  tokenTracker.saveReport();
 
   return {
     fidelity,
