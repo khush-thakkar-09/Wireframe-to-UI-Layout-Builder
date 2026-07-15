@@ -2,95 +2,95 @@
                LLM Token Usage Report             
 ==================================================
 
+Step Name:     VLM Crop: element_2
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 58
+Total Tokens:  828
+--------------------------------------------------
 Step Name:     VLM Crop: element_5
 Model ID:      qwen.qwen3-vl-235b-a22b
 Input Tokens:  770
-Output Tokens: 71
-Total Tokens:  841
---------------------------------------------------
-Step Name:     VLM Crop: element_6
-Model ID:      qwen.qwen3-vl-235b-a22b
-Input Tokens:  770
-Output Tokens: 72
-Total Tokens:  842
---------------------------------------------------
-Step Name:     VLM Crop: element_3
-Model ID:      qwen.qwen3-vl-235b-a22b
-Input Tokens:  770
-Output Tokens: 71
-Total Tokens:  841
---------------------------------------------------
-Step Name:     VLM Crop: element_1
-Model ID:      qwen.qwen3-vl-235b-a22b
-Input Tokens:  770
-Output Tokens: 90
-Total Tokens:  860
+Output Tokens: 65
+Total Tokens:  835
 --------------------------------------------------
 Step Name:     VLM Crop: element_8
 Model ID:      qwen.qwen3-vl-235b-a22b
 Input Tokens:  770
-Output Tokens: 80
-Total Tokens:  850
+Output Tokens: 56
+Total Tokens:  826
+--------------------------------------------------
+Step Name:     VLM Crop: element_6
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 74
+Total Tokens:  844
+--------------------------------------------------
+Step Name:     VLM Crop: element_1
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 52
+Total Tokens:  822
+--------------------------------------------------
+Step Name:     VLM Crop: element_4
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 63
+Total Tokens:  833
 --------------------------------------------------
 Step Name:     VLM Crop: element_7
 Model ID:      qwen.qwen3-vl-235b-a22b
 Input Tokens:  770
-Output Tokens: 70
-Total Tokens:  840
+Output Tokens: 52
+Total Tokens:  822
 --------------------------------------------------
-Step Name:     VLM Crop: element_4
+Step Name:     VLM Crop: element_3
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 59
+Total Tokens:  829
+--------------------------------------------------
+Step Name:     VLM Crop: element_11
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 59
+Total Tokens:  829
+--------------------------------------------------
+Step Name:     VLM Crop: element_13
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 76
+Total Tokens:  846
+--------------------------------------------------
+Step Name:     VLM Crop: element_15
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 58
+Total Tokens:  828
+--------------------------------------------------
+Step Name:     VLM Crop: element_10
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 55
+Total Tokens:  825
+--------------------------------------------------
+Step Name:     VLM Crop: element_12
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 74
+Total Tokens:  844
+--------------------------------------------------
+Step Name:     VLM Crop: element_9
 Model ID:      qwen.qwen3-vl-235b-a22b
 Input Tokens:  770
 Output Tokens: 72
 Total Tokens:  842
 --------------------------------------------------
-Step Name:     VLM Crop: element_2
-Model ID:      qwen.qwen3-vl-235b-a22b
-Input Tokens:  770
-Output Tokens: 80
-Total Tokens:  850
---------------------------------------------------
-Step Name:     VLM Crop: element_15
-Model ID:      qwen.qwen3-vl-235b-a22b
-Input Tokens:  770
-Output Tokens: 54
-Total Tokens:  824
---------------------------------------------------
 Step Name:     VLM Crop: element_14
 Model ID:      qwen.qwen3-vl-235b-a22b
 Input Tokens:  770
-Output Tokens: 64
-Total Tokens:  834
---------------------------------------------------
-Step Name:     VLM Crop: element_13
-Model ID:      qwen.qwen3-vl-235b-a22b
-Input Tokens:  770
-Output Tokens: 60
-Total Tokens:  830
---------------------------------------------------
-Step Name:     VLM Crop: element_10
-Model ID:      qwen.qwen3-vl-235b-a22b
-Input Tokens:  770
-Output Tokens: 56
-Total Tokens:  826
---------------------------------------------------
-Step Name:     VLM Crop: element_9
-Model ID:      qwen.qwen3-vl-235b-a22b
-Input Tokens:  770
-Output Tokens: 79
-Total Tokens:  849
---------------------------------------------------
-Step Name:     VLM Crop: element_12
-Model ID:      qwen.qwen3-vl-235b-a22b
-Input Tokens:  770
-Output Tokens: 73
-Total Tokens:  843
---------------------------------------------------
-Step Name:     VLM Crop: element_11
-Model ID:      qwen.qwen3-vl-235b-a22b
-Input Tokens:  770
-Output Tokens: 56
-Total Tokens:  826
+Output Tokens: 146
+Total Tokens:  916
 --------------------------------------------------
 Step Name:     VLM Crop: element_16
 Model ID:      qwen.qwen3-vl-235b-a22b
@@ -98,47 +98,101 @@ Input Tokens:  770
 Output Tokens: 59
 Total Tokens:  829
 --------------------------------------------------
+Step Name:     VLM Crop: element_20
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 54
+Total Tokens:  824
+--------------------------------------------------
 Step Name:     VLM Crop: element_17
 Model ID:      qwen.qwen3-vl-235b-a22b
 Input Tokens:  770
 Output Tokens: 57
 Total Tokens:  827
 --------------------------------------------------
+Step Name:     VLM Crop: element_24
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 87
+Total Tokens:  857
+--------------------------------------------------
 Step Name:     VLM Crop: element_19
 Model ID:      qwen.qwen3-vl-235b-a22b
 Input Tokens:  770
-Output Tokens: 60
-Total Tokens:  830
+Output Tokens: 54
+Total Tokens:  824
 --------------------------------------------------
 Step Name:     VLM Crop: element_18
 Model ID:      qwen.qwen3-vl-235b-a22b
 Input Tokens:  770
-Output Tokens: 81
-Total Tokens:  851
+Output Tokens: 59
+Total Tokens:  829
+--------------------------------------------------
+Step Name:     VLM Crop: element_22
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 57
+Total Tokens:  827
+--------------------------------------------------
+Step Name:     VLM Crop: element_23
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 57
+Total Tokens:  827
+--------------------------------------------------
+Step Name:     VLM Crop: element_21
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 58
+Total Tokens:  828
+--------------------------------------------------
+Step Name:     VLM Crop: element_26
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 57
+Total Tokens:  827
+--------------------------------------------------
+Step Name:     VLM Crop: element_25
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 64
+Total Tokens:  834
+--------------------------------------------------
+Step Name:     VLM Crop: element_27
+Model ID:      qwen.qwen3-vl-235b-a22b
+Input Tokens:  770
+Output Tokens: 59
+Total Tokens:  829
 --------------------------------------------------
 Step Name:     Section Identifier
 Model ID:      qwen.qwen3-vl-235b-a22b
-Input Tokens:  4395
-Output Tokens: 496
-Total Tokens:  4891
+Input Tokens:  5179
+Output Tokens: 595
+Total Tokens:  5774
+--------------------------------------------------
+Step Name:     Coding Agent: Navigation Bar
+Model ID:      qwen.qwen3-coder-next
+Input Tokens:  3288
+Output Tokens: 1319
+Total Tokens:  4607
 --------------------------------------------------
 Step Name:     Coding Agent: Hero Section
 Model ID:      qwen.qwen3-coder-next
-Input Tokens:  2796
-Output Tokens: 736
-Total Tokens:  3532
+Input Tokens:  3305
+Output Tokens: 1309
+Total Tokens:  4614
 --------------------------------------------------
-Step Name:     Coding Agent: Destination Grid
+Step Name:     Coding Agent: Event Banner
 Model ID:      qwen.qwen3-coder-next
-Input Tokens:  2994
-Output Tokens: 1391
-Total Tokens:  4385
+Input Tokens:  1920
+Output Tokens: 912
+Total Tokens:  2832
 --------------------------------------------------
 
 ==================================================
                      TOTALS                       
 ==================================================
-Total Input Tokens:  24815
-Total Output Tokens: 3928
-Total Tokens:        28743
+Total Input Tokens:  34482
+Total Output Tokens: 5876
+Total Tokens:        40358
 ==================================================

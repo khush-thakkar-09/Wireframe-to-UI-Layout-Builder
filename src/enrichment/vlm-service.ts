@@ -76,6 +76,7 @@ Do not wrap your answer in markdown codeblocks (no \`\`\`json). Just return raw 
         },
       ],
       temperature: 0.1,
+      abortSignal: AbortSignal.timeout(90000),
     });
 
     tokenTracker.track(`VLM Crop: ${elementId}`, modelId, usage, prompt, text, 1, true);

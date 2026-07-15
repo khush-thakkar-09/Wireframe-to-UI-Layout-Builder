@@ -1,130 +1,100 @@
 import React, { useMemo, useState } from 'react';
 import './index.css';
 
-function HeroSection() {
+function NavigationBar() {
   return (
     <section className="section-1">
-      <div className="hero-content">
-        <h2 className="hero-chapters">NHRDN CHAPTERS</h2>
-        <h3 className="hero-subheading">
-          Presence across <span className="hero-accent">major cities</span>
-        </h3>
-        <h3 className="hero-location">in India</h3>
-        <p className="hero-paragraph">
-          With a strong community of global HR leaders, NHRDN
-        </p>
-        <p className="hero-paragraph">
-          actively conducts networking events and activities in
-        </p>
-        <p className="hero-paragraph">
-          over 60 cities across India.
-        </p>
-        <button className="hero-cta">
-          Explore Chapters
-        </button>
+      <nav className="nav-container">
+        {/* Logo */}
+        <div className="nav-logo">
+          <span className="logo-text">HRX</span>
+        </div>
+
+        {/* Navigation Links */}
+        <ul className="nav-links">
+          <li className="nav-item nav-item-home">
+            <a href="#home" className="nav-link">Home</a>
+          </li>
+          <li className="nav-item">
+            <a href="#collection" className="nav-link">Collection</a>
+          </li>
+          <li className="nav-item">
+            <a href="#community" className="nav-link">Community</a>
+          </li>
+          <li className="nav-item">
+            <a href="#blog" className="nav-link">Blog</a>
+          </li>
+          <li className="nav-item">
+            <a href="#press-release" className="nav-link">Press Release</a>
+          </li>
+          <li className="nav-item">
+            <a href="#connect" className="nav-link">Connect</a>
+          </li>
+        </ul>
+
+        {/* Right Actions */}
+        <div className="nav-actions">
+          <button className="nav-login-btn">Login</button>
+          <button className="nav-cart-btn" aria-label="Cart">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 6H18L16.5 15H7.5L6 6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M6 6L5 3H19L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="9" cy="19" r="1.5" fill="currentColor"/>
+              <circle cx="15" cy="19" r="1.5" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+  );
+}
+
+function HeroSection() {
+  return (
+    <section className="section-2">
+      <div className="hero-container">
+        <div className="hero-image-wrapper">
+          <div className="hero-image" />
+        </div>
+        
+        <div className="hero-content">
+          <div className="hero-subheading">HRX MIND FUEL</div>
+          <h2 className="hero-heading">CHALLENGE YOUR LIMITS</h2>
+          <p className="hero-paragraph">
+            Be a part of the tribe that's limitless. Are you looking for some exciting challenges? Then you have it all with Hrx workout sessions that are specially designed with out trainers to kickstart your fitness journey. Then why limit yourselves when having your fitness convenience in your own hands with Hrx.
+          </p>
+          
+          <div className="hero-stats">
+            <div className="stat-item">
+              <div className="stat-number">150+</div>
+              <div className="stat-label">Fitness channels</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">40+</div>
+              <div className="stat-label">Fitness Programmes</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">0+</div>
+              <div className="stat-label">Community Members</div>
+            </div>
+          </div>
+          
+          <button className="hero-button">FIND A WORKOUT</button>
+        </div>
       </div>
     </section>
   );
 }
 
-function DestinationGrid() {
+function EventBanner() {
   return (
-    <section className="section-2">
-      <div className="destination-grid">
-        {/* Nepal */}
-        <div className="destination-card">
-          <img 
-            src="https://placehold.co/326x403/8b4513/ffffff?text=Nepal" 
-            alt="Nepal" 
-            className="destination-image"
-          />
-          <div className="destination-overlay">
-            <h3 className="destination-title">Nepal</h3>
-          </div>
+    <section className="section-3">
+      <div className="event-banner-container">
+        <div className="yoga-event-card">
+          <h2 className="yoga-heading">International YOGA DAY celebration</h2>
         </div>
-
-        {/* Alwar and Rewari */}
-        <div className="destination-card">
-          <img 
-            src="https://placehold.co/328x421/8b4513/ffffff?text=Alwar+and+Rewari" 
-            alt="Alwar and Rewari" 
-            className="destination-image"
-          />
-          <div className="destination-overlay">
-            <h3 className="destination-title">Alwar and Rewari</h3>
-          </div>
-        </div>
-
-        {/* Goa */}
-        <div className="destination-card">
-          <img 
-            src="https://placehold.co/322x420/8b4513/ffffff?text=Goa" 
-            alt="Goa" 
-            className="destination-image"
-          />
-          <div className="destination-overlay">
-            <h3 className="destination-title">Goa</h3>
-          </div>
-        </div>
-
-        {/* Prayagraj */}
-        <div className="destination-card">
-          <img 
-            src="https://placehold.co/323x416/8b4513/ffffff?text=Prayagraj" 
-            alt="Prayagraj" 
-            className="destination-image"
-          />
-          <div className="destination-overlay">
-            <h3 className="destination-title">Prayagraj</h3>
-          </div>
-        </div>
-
-        {/* Shoolini */}
-        <div className="destination-card">
-          <img 
-            src="https://placehold.co/330x411/8b4513/ffffff?text=Shoolini" 
-            alt="Shoolini" 
-            className="destination-image"
-          />
-          <div className="destination-overlay">
-            <h3 className="destination-title">Shoolini</h3>
-          </div>
-        </div>
-
-        {/* Tanjore */}
-        <div className="destination-card">
-          <img 
-            src="https://placehold.co/326x405/8b4513/ffffff?text=Tanjore" 
-            alt="Tanjore" 
-            className="destination-image"
-          />
-          <div className="destination-overlay">
-            <h3 className="destination-title">Tanjore</h3>
-          </div>
-        </div>
-
-        {/* Solan */}
-        <div className="destination-card">
-          <img 
-            src="https://placehold.co/329x410/8b4513/ffffff?text=Solan" 
-            alt="Solan" 
-            className="destination-image"
-          />
-          <div className="destination-overlay">
-            <h3 className="destination-title">Solan</h3>
-          </div>
-        </div>
-
-        {/* Uttarakhand */}
-        <div className="destination-card">
-          <img 
-            src="https://placehold.co/329x408/8b4513/ffffff?text=Uttarakhand" 
-            alt="Uttarakhand" 
-            className="destination-image"
-          />
-          <div className="destination-overlay">
-            <h3 className="destination-title">Uttarakhand</h3>
-          </div>
+        <div className="dublin-event-card">
+          <h2 className="dublin-heading">DUBLIN SQUARE</h2>
         </div>
       </div>
     </section>
@@ -134,8 +104,9 @@ function DestinationGrid() {
 export default function App() {
   return (
     <main className="app-container">
+      <NavigationBar />
       <HeroSection />
-      <DestinationGrid />
+      <EventBanner />
     </main>
   );
 }

@@ -78,9 +78,11 @@ The object detection model sometimes produces overlapping bounding boxes — two
 5. **Text Hierarchy**: Set proper line-height (1.5-1.7 for body, 1.2 for headings) and letter-spacing for premium readability.
 
 ### WHAT NOT TO DO (ANTI-HALLUCINATION):
-- Do NOT reference any external assets, images, logos, or icons from other websites (use \`https://placehold.co/WIDTHxHEIGHT/HEXBG/HEXFG\` or inline SVGs only).
 - Do NOT use un-scoped global keyframes or styles.
 - Do NOT invent text — use the exact text_content values provided in the layout tree elements.
+
+Rule for image_media:
+- Make sure that whenever you come across Image Media, the image_media should have the height and width exactly as provided in the layout tree elements. DO NOT code any text into that image to represent it. Either use an external image of similar description or just let the Image outline be. NEVER use "Image" or any text as a placeholder for the image. Either you put the right image in its place or just let the Image outline be. NEVER add any text on your own inside the Image.
 `;
 
 /**
@@ -125,6 +127,7 @@ ${sectionDescription}
       model: bedrockProvider(modelId),
       prompt: prompt,
       temperature: 0.15,
+      abortSignal: AbortSignal.timeout(90000),
     });
 
     tokenTracker.track(`Coding Agent: ${section.section_name}`, modelId, usage, prompt, text, 0, false);
