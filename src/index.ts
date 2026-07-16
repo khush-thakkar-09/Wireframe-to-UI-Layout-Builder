@@ -11,6 +11,7 @@ import { buildLayoutTree } from "./layout/layout-builder.js";
 import { identifySections } from "./sections/section-identifier.js";
 import { generateSectionCode } from "./codegen/coding-agent.js";
 import { synthesizeApp } from "./codegen/synthesizer.js";
+import { generateAndSaveCms } from "./cms/cms-helper.js";
 import { tokenTracker } from "./utils/token-tracker.js";
 import type { FidelityResult, PreprocessResult, ProcessedDetection, EnrichedDetection, LayoutNode } from "./types/index.js";
 
@@ -174,22 +175,43 @@ export async function runPipeline(imagePath: string, outputDir: string): Promise
     `Phase 6 completed successfully: Identified ${sections.length} UI sections. Sectioned layout saved to: ${sectionsOutputPath}`
   );
 
-  // ─── Phase 7: Code Generation (Static) ──────────────────────────────
-  logger.info("Pipeline", "Initiating Phase 7: Generating static React components & CSS...");
+  // ─── Phase 7: CMS Generation (NEW) ──────────────────────────────────
+  logger.info("Pipeline", "Initiating Phase 7: Generating CMS schema & saving to MongoDB...");
+  const testingReactPath = path.resolve(process.cwd(), "testing_react");
+  
+  // Generate project-wide CMS schemas and save to local JSON and MongoDB
+  const { db_records, projectId } = await generateAndSaveCms(
+    sections,
+    absoluteImagePath,
+    testingReactPath
+  );
+  
+  logger.success(
+    "Pipeline",
+    `Phase 7 completed successfully: Generated CMS for ${sections.length} sections (Project ID: ${projectId}).`
+  );
+
+  // ─── Phase 8: Code Generation (Dynamic/CMS-bound) ───────────────────
+  logger.info("Pipeline", "Initiating Phase 8: Generating CMS-bound React components & CSS...");
   const staticCodes: { jsx: string; css: string }[] = [];
   for (let idx = 0; idx < sections.length; idx++) {
     const sect = sections[idx]!;
-    const code = await generateSectionCode(sect, idx + 1);
+    const cmsSectionData = db_records[idx]!;
+    const code = await generateSectionCode(sect, idx + 1, cmsSectionData);
     staticCodes.push(code);
   }
-  logger.success("Pipeline", `Phase 7 completed successfully: Generated code blocks for ${sections.length} sections.`);
+  logger.success("Pipeline", `Phase 8 completed successfully: Generated CMS-bound code blocks for ${sections.length} sections.`);
 
-  // ─── Phase 8: Synthesize React App ──────────────────────────────────
-  logger.info("Pipeline", "Initiating Phase 8: Synthesizing static React App components and stylesheet...");
-  const testingReactPath = path.resolve(process.cwd(), "testing_react");
-  synthesizeApp(sections, staticCodes, testingReactPath);
+  // ─── Phase 9: Synthesize React App ──────────────────────────────────
+  logger.info("Pipeline", "Initiating Phase 9: Synthesizing React App with text-editor wrapper...");
+  // Now pass the projectId so it gets embedded in WrapperCode
+  synthesizeApp(sections, staticCodes, testingReactPath, projectId);
 
-  logger.success("Pipeline", `Phase 8 completed successfully: Synthesized static React App to: ${testingReactPath}`);
+  logger.success("Pipeline", `Phase 9 completed successfully: Synthesized React App to: ${testingReactPath}`);
+
+  // Disconnect MongoDB after pipeline run
+  const { disconnectFromMongoDB } = await import("./database/mongo.js");
+  await disconnectFromMongoDB();
 
   // Save token report
   tokenTracker.saveReport();

@@ -1,94 +1,265 @@
 {
-  "logo": {
-    "fieldId": "1234567890",
-    "content": "HRX"
-  },
-  "logoTrademark": {
-    "fieldId": "2345678901",
-    "content": "®"
-  },
-  "homeLink": {
-    "fieldId": "3456789012",
-    "content": "Home"
-  },
-  "communityLink": {
-    "fieldId": "4567890123",
-    "content": "Community"
-  },
-  "pressReleaseLink": {
-    "fieldId": "5678901234",
-    "content": "Press Release"
-  },
-  "blogLink": {
-    "fieldId": "6789012345",
-    "content": "Blog"
-  },
-  "collectionLink": {
-    "fieldId": "7890123456",
-    "content": "Collection"
-  },
-  "connectLink": {
-    "fieldId": "8901234567",
-    "content": "Connect"
-  },
-  "loginButton": {
-    "fieldId": "9012345678",
-    "content": "Login"
-  },
-  "shoppingBagIcon": {
-    "fieldId": "0123456789",
-    "content": ""
-  },
-  "heroSubtitle": {
-    "fieldId": "1122334455",
-    "content": "HRX MIND FUEL"
-  },
-  "heroTitle": {
-    "fieldId": "2233445566",
-    "content": "CHALLENGE YOUR LIMITS"
-  },
-  "heroDescription": {
-    "fieldId": "3344556677",
-    "content": "Take control of your fitness journey with HRX workout sessions led by expert trainers. Experience the power of motivation and transform your body and mind."
-  },
-  "ctaButton": {
-    "fieldId": "4455667788",
-    "content": "FIND A WORKOUT"
-  },
-  "heroImage": {
-    "fieldId": "5566778899",
-    "content": "https://placehold.co/1200x800/1a1a1a/ffffff?text=HRX+Athlete"
-  },
-  "stat1Number": {
-    "fieldId": "6677889900",
-    "content": "0+"
-  },
-  "stat1Label": {
-    "fieldId": "7788990011",
-    "content": "Community Members"
-  },
-  "stat2Number": {
-    "fieldId": "8899001122",
-    "content": "40+"
-  },
-  "stat2Label": {
-    "fieldId": "9900112233",
-    "content": "Fitness Programmes"
-  },
-  "stat3Number": {
-    "fieldId": "0011223344",
-    "content": "150+"
-  },
-  "stat3Label": {
-    "fieldId": "1122334455",
-    "content": "Fitness channels"
-  },
-  "eventTitle": {
-    "fieldId": "2233445566",
-    "content": "International YOGA DAY celebration"
-  },
-  "eventLocation": {
-    "fieldId": "3344556677",
-    "content": "DUBLIN SQUARE"
-  }
+  "db_records": [
+    {
+      "metadata": {
+        "sectionId": "8472910365",
+        "sectionName": "Hero Section",
+        "sectionStatus": "Active",
+        "variations": 1,
+        "sectionType": "",
+        "path": "/client/nhrd4/Hero Section/Variation1",
+        "isAiGenerated": true,
+        "pageName": "home",
+        "index": 1
+      },
+      "elements": [
+        {
+          "sectionId": "8472910365",
+          "elementName": "heroMainHeading",
+          "fieldId": "1928374650",
+          "content": "NHRDN KEY MOMENTS",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "8472910365",
+          "elementName": "heroSubheadingPart1",
+          "fieldId": "2039485761",
+          "content": "Celebrating milestones and creating",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "8472910365",
+          "elementName": "heroSubheadingPart2",
+          "fieldId": "3140596872",
+          "content": "impact",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "sectionId": "1984726350",
+        "sectionName": "Event Carousel",
+        "sectionStatus": "Active",
+        "variations": 1,
+        "sectionType": "",
+        "path": "/client/nhrd4/Event Carousel/Variation1",
+        "isAiGenerated": true,
+        "pageName": "home",
+        "index": 3
+      },
+      "elements": [
+        {
+          "sectionId": "1984726350",
+          "elementName": "eventCarouselMainImage1",
+          "fieldId": "2847193650",
+          "content": "A group of eight people posing for a photo in front of a promotional backdrop for the National Corporate Cricket League 2026, featuring logos, event details, and cricket illustrations.",
+          "contentType": "Image",
+          "section": "Event Carousel",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "1984726350",
+          "elementName": "eventCarouselCaption1",
+          "fieldId": "3958204761",
+          "content": "Inquizition 2026",
+          "contentType": "Text",
+          "section": "Event Carousel",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "1984726350",
+          "elementName": "eventCarouselMainImage2",
+          "fieldId": "4069315872",
+          "content": "A man in glasses and a suit stands behind a podium labeled 'NHRDN INQUIZITION 2026 GRAND FINALE' with a backdrop displaying event branding and sponsor logos.",
+          "contentType": "Image",
+          "section": "Event Carousel",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "1984726350",
+          "elementName": "eventCarouselCaption2",
+          "fieldId": "5180426983",
+          "content": "Inquizition 2026",
+          "contentType": "Text",
+          "section": "Event Carousel",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "1984726350",
+          "elementName": "eventCarouselMainImage3",
+          "fieldId": "6291538094",
+          "content": "A group of eight people posing for a photo in front of a promotional backdrop for the National Corporate Cricket League 2026, featuring logos, event details, and cricket illustrations.",
+          "contentType": "Image",
+          "section": "Event Carousel",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "1984726350",
+          "elementName": "eventCarouselCaption3",
+          "fieldId": "7402649205",
+          "content": "NCCL 2026",
+          "contentType": "Text",
+          "section": "Event Carousel",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "1984726350",
+          "elementName": "carouselPrevButton",
+          "fieldId": "8513760316",
+          "content": "Previous Event",
+          "contentType": "Text",
+          "section": "Event Carousel",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "1984726350",
+          "elementName": "carouselNextButton",
+          "fieldId": "9624871427",
+          "content": "Next Event",
+          "contentType": "Text",
+          "section": "Event Carousel",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "sectionId": "3847291056",
+        "sectionName": "Carousel Pagination",
+        "sectionStatus": "Active",
+        "variations": 1,
+        "sectionType": "",
+        "path": "/client/nhrd4/Carousel Pagination/Variation1",
+        "isAiGenerated": true,
+        "pageName": "home",
+        "index": 4
+      },
+      "elements": [
+        {
+          "sectionId": "3847291056",
+          "elementName": "paginationDot1",
+          "fieldId": "9283746510",
+          "content": "",
+          "contentType": "Image",
+          "section": "Carousel Pagination",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "3847291056",
+          "elementName": "paginationDot2",
+          "fieldId": "1029384756",
+          "content": "",
+          "contentType": "Image",
+          "section": "Carousel Pagination",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "3847291056",
+          "elementName": "paginationDot3",
+          "fieldId": "5678901234",
+          "content": "",
+          "contentType": "Image",
+          "section": "Carousel Pagination",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "3847291056",
+          "elementName": "paginationDot4",
+          "fieldId": "4567890123",
+          "content": "",
+          "contentType": "Image",
+          "section": "Carousel Pagination",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "3847291056",
+          "elementName": "paginationDot5",
+          "fieldId": "6789012345",
+          "content": "",
+          "contentType": "Image",
+          "section": "Carousel Pagination",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "3847291056",
+          "elementName": "paginationDot6",
+          "fieldId": "2345678901",
+          "content": "",
+          "contentType": "Image",
+          "section": "Carousel Pagination",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "3847291056",
+          "elementName": "paginationActiveIndicator",
+          "fieldId": "7890123456",
+          "content": "",
+          "contentType": "Image",
+          "section": "Carousel Pagination",
+          "projectName": "nhrd4",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        }
+      ]
+    }
+  ]
 }

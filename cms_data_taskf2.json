@@ -1,0 +1,1459 @@
+{
+  "db_records": [
+    {
+      "metadata": {
+        "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+        "sectionName": "Hero Section",
+        "sectionStatus": "Active",
+        "variations": 1,
+        "sectionType": "",
+        "path": "/client/BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational./Hero Section/Variation1",
+        "isAiGenerated": true,
+        "pageName": "home",
+        "index": 1
+      },
+      "elements": [
+        {
+          "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+          "elementName": "heroBackgroundMedia",
+          "fieldId": "e24debaf-78bc-4567-9f03-748c97b36e44",
+          "content": "https://example.com/hero-athlete-mid-rep.jpg",
+          "contentType": "Image",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+          "elementName": "heroMainHeadline",
+          "fieldId": "d8e8446e-936d-4a3e-9af3-bff2115f21b3",
+          "content": "Build Strength. Own Your Transformation.",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+          "elementName": "heroSubheading",
+          "fieldId": "a5e6d7f5-2fb4-4ec4-8b88-b5e937e08889",
+          "content": "Science-backed, coach-led online personal training for all levels",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+          "elementName": "primaryCtaButton",
+          "fieldId": "e8312775-8782-40d5-8f28-bd308a71c509",
+          "content": "Start Your Transformation",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+          "elementName": "primaryCtaLinkUrl",
+          "fieldId": "4abf6cfb-5d8c-45e9-9dd5-ef35580ab1c1",
+          "content": "/programs",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+          "elementName": "secondaryCtaLink",
+          "fieldId": "410a4714-dfaa-414c-b899-e5c3a6c20acc",
+          "content": "View Programs →",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+          "elementName": "secondaryCtaLinkUrl",
+          "fieldId": "f774fd14-62be-4442-9eba-d16250bf3eb3",
+          "content": "/programs",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+          "elementName": "trustedByLogos",
+          "fieldId": "da7d95d0-ada6-4862-9822-b5661ded8328",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "Men’s Health",
+              "fieldType1": "Text",
+              "fieldId1": "cc304de7-f1c3-49e7-83ff-36da5dc7b28c",
+              "field2": "https://example.com/logos/mens-health-logo.png",
+              "fieldType2": "Image",
+              "fieldId2": "b869007d-f877-4b23-ab52-e929e40a6795"
+            },
+            {
+              "field1": "ACE",
+              "fieldType1": "Text",
+              "fieldId1": "738b0dc0-e277-4518-a55a-db09af134617",
+              "field2": "https://example.com/logos/ace-logo.png",
+              "fieldType2": "Image",
+              "fieldId2": "2f610dbe-fc86-4a92-93a4-309655a4eabe"
+            },
+            {
+              "field1": "NASM",
+              "fieldType1": "Text",
+              "fieldId1": "97775a7d-a354-4c78-8941-89dedff616d0",
+              "field2": "https://example.com/logos/nasm-logo.png",
+              "fieldType2": "Image",
+              "fieldId2": "752c3f84-7386-448d-9513-629e07b10348"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "sectionId": "8efd4564-b931-47b2-8614-9d93ce038ae4",
+        "sectionName": "Training Programs Grid",
+        "sectionStatus": "Active",
+        "variations": 1,
+        "sectionType": "",
+        "path": "/client/BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational./Training Programs Grid/Variation1",
+        "isAiGenerated": true,
+        "pageName": "home",
+        "index": 2
+      },
+      "elements": [
+        {
+          "sectionId": "8efd4564-b931-47b2-8614-9d93ce038ae4",
+          "elementName": "trainingProgramsSectionHeadline",
+          "fieldId": "9241a29f-7a00-4b64-a2cf-6c382034c7d3",
+          "content": "Find Your Perfect Program",
+          "contentType": "Text",
+          "section": "Training Programs Grid",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "8efd4564-b931-47b2-8614-9d93ce038ae4",
+          "elementName": "difficultyFilterTabs",
+          "fieldId": "a1aee1ae-5e03-4229-8259-78720e15fb2f",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Training Programs Grid",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "Beginner",
+              "fieldType1": "Text",
+              "fieldId1": "26f50b2b-24a2-44fc-8e05-0dbd9abc4250",
+              "field2": "start",
+              "fieldType2": "Text",
+              "fieldId2": "667aa6ab-0b74-4829-a942-2cb917390cbb"
+            },
+            {
+              "field1": "Intermediate",
+              "fieldType1": "Text",
+              "fieldId1": "91d7b966-6dc1-4064-9ee7-344edf84ad90",
+              "field2": "intermediate",
+              "fieldType2": "Text",
+              "fieldId2": "5776318b-453b-4c5b-9e63-d940be897d5a"
+            },
+            {
+              "field1": "Advanced",
+              "fieldType1": "Text",
+              "fieldId1": "9c3e1a9b-1369-4db6-a6cf-32a63a1345cc",
+              "field2": "advanced",
+              "fieldType2": "Text",
+              "fieldId2": "22ff952f-1ef2-46ac-bb99-66f5ef76a719"
+            }
+          ]
+        },
+        {
+          "sectionId": "8efd4564-b931-47b2-8614-9d93ce038ae4",
+          "elementName": "trainingProgramCards",
+          "fieldId": "5d12e017-ded4-499c-a878-b067285ffd32",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Training Programs Grid",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "https://placehold.co/600x400/orange/white?text=Strength+Foundation",
+              "fieldType1": "Image",
+              "fieldId1": "a41aac39-0c77-4ad1-b1fb-256575991589",
+              "field2": "7-Day Strength Foundation",
+              "fieldType2": "Text",
+              "fieldId2": "d6563693-0e6e-445e-9c08-ec0d4f1e9b10",
+              "field3": "Beginner",
+              "fieldType3": "Text",
+              "fieldId3": "0f61a96a-8a34-4b9c-8643-6e3a4e4a8305",
+              "field4": "4 Weeks",
+              "fieldType4": "Text",
+              "fieldId4": "0c60969a-7ad9-42ec-9e55-20b449d346a4",
+              "field5": "Strength",
+              "fieldType5": "Text",
+              "fieldId5": "cce31474-2c22-436a-bc1b-50bd943720e3",
+              "field6": "No Equipment",
+              "fieldType6": "Text",
+              "fieldId6": "649275e1-cc79-458d-9758-7b98636693db",
+              "field7": "Start Now",
+              "fieldType7": "Text",
+              "fieldId7": "ba8b4e19-a851-4384-9f3d-ef6ae0f53314"
+            },
+            {
+              "field1": "https://placehold.co/600x400/red/white?text=HIIT+Ignition",
+              "fieldType1": "Image",
+              "fieldId1": "43545237-a108-480a-9a06-2ed57e6bb99c",
+              "field2": "HIIT Ignition: 2-Week Blast",
+              "fieldType2": "Text",
+              "fieldId2": "416a621b-0665-436e-9015-23221a588abb",
+              "field3": "Intermediate",
+              "fieldType3": "Text",
+              "fieldId3": "ce2e32d3-1368-4f3c-bcca-f2ca0108860a",
+              "field4": "2 Weeks",
+              "fieldType4": "Text",
+              "fieldId4": "3f6c39a5-a693-4de5-850e-a7fc5ddecb69",
+              "field5": "Cardio",
+              "fieldType5": "Text",
+              "fieldId5": "199d10a1-7a72-4710-a076-ad80a39e1cbf",
+              "field6": "Minimal Equipment",
+              "fieldType6": "Text",
+              "fieldId6": "1e9670a5-8e43-4f2f-9931-d50ba3db2915",
+              "field7": "Learn More",
+              "fieldType7": "Text",
+              "fieldId7": "093028e2-2c0f-40ff-8ca3-23d5c8fb78e2"
+            },
+            {
+              "field1": "https://placehold.co/600x400/black/white?text=Power+Elite",
+              "fieldType1": "Image",
+              "fieldId1": "31ee4214-c407-4a5f-a484-73222841fe16",
+              "field2": "Power Elite: 8-Week Max",
+              "fieldType2": "Text",
+              "fieldId2": "0783150a-a166-4fee-9843-a1d7339498d2",
+              "field3": "Advanced",
+              "fieldType3": "Text",
+              "fieldId3": "aef39203-25c6-4f5e-95b1-74c26c31b2d4",
+              "field4": "8 Weeks",
+              "fieldType4": "Text",
+              "fieldId4": "8058f76d-f321-4b85-b400-cabe37e7f4ff",
+              "field5": "Strength",
+              "fieldType5": "Text",
+              "fieldId5": "562afc67-bce8-4d98-bd2e-e048c0c4cac4",
+              "field6": "Barbell Required",
+              "fieldType6": "Text",
+              "fieldId6": "614dee5f-3b04-4e89-9dfe-f8f9715a1d49",
+              "field7": "Start Now",
+              "fieldType7": "Text",
+              "fieldId7": "34a0cfae-f28e-4fcc-9f75-ce51cb085e77"
+            }
+          ]
+        },
+        {
+          "sectionId": "8efd4564-b931-47b2-8614-9d93ce038ae4",
+          "elementName": "emptyStateMessage",
+          "fieldId": "4de25ffb-ee98-46b4-8221-57dcd925fc81",
+          "content": "No programs match this level—try adjusting filters",
+          "contentType": "Text",
+          "section": "Training Programs Grid",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "sectionId": "4e07e77c-24c5-4381-b370-f4460c28ca6c",
+        "sectionName": "Coach Credentials Showcase",
+        "sectionStatus": "Active",
+        "variations": 1,
+        "sectionType": "",
+        "path": "/client/BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational./Coach Credentials Showcase/Variation1",
+        "isAiGenerated": true,
+        "pageName": "home",
+        "index": 3
+      },
+      "elements": [
+        {
+          "sectionId": "4e07e77c-24c5-4381-b370-f4460c28ca6c",
+          "elementName": "coachCredentialsSectionHeadline",
+          "fieldId": "469f3aa9-98a6-4b20-a90c-f7b17552d29e",
+          "content": "Trained by the Best",
+          "contentType": "Text",
+          "section": "Coach Credentials Showcase",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "4e07e77c-24c5-4381-b370-f4460c28ca6c",
+          "elementName": "coachCredentialsSubtitle",
+          "fieldId": "0cf6c375-05da-455f-9066-9ef0d9d594da",
+          "content": "Meet our certified experts",
+          "contentType": "Text",
+          "section": "Coach Credentials Showcase",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "4e07e77c-24c5-4381-b370-f4460c28ca6c",
+          "elementName": "coachCredentialsStatsStrip",
+          "fieldId": "4ce00bf5-1e0a-4855-9c2e-6028ae78de85",
+          "content": "15+ years combined coaching experience | 500+ client transformations",
+          "contentType": "Text",
+          "section": "Coach Credentials Showcase",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "4e07e77c-24c5-4381-b370-f4460c28ca6c",
+          "elementName": "certificationBadges",
+          "fieldId": "03c7ae77-f6d1-4a8b-856d-5ef6ef2669b2",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Coach Credentials Showcase",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "NASM",
+              "fieldType1": "Text",
+              "fieldId1": "a0f3a879-e6c8-435c-8f56-2be54b775293",
+              "field2": "ACE",
+              "fieldType2": "Text",
+              "fieldId2": "9050f4c8-48b5-4a71-a51f-787a5e5933a3",
+              "field3": "ISSA",
+              "fieldType3": "Text",
+              "fieldId3": "978a6f2e-98be-46ce-97e5-0a58033a5b2d"
+            }
+          ]
+        },
+        {
+          "sectionId": "4e07e77c-24c5-4381-b370-f4460c28ca6c",
+          "elementName": "coachCards",
+          "fieldId": "54510d1c-aedd-40b5-87fc-a94f00852dbd",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Coach Credentials Showcase",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "Alex Rivera",
+              "fieldType1": "Text",
+              "fieldId1": "23218b5b-fe0b-4b92-b31e-1db313f76bf2",
+              "field2": "CSCS, NASM-CPT",
+              "fieldType2": "Text",
+              "fieldId2": "346c231a-ee21-43ed-8ad0-091ec19284b6",
+              "field3": "Strength & Conditioning",
+              "fieldType3": "Text",
+              "fieldId3": "2030252f-df76-48b4-a0b4-7082292d344c",
+              "field4": "With 8 years of experience helping athletes and everyday clients build functional strength, Alex believes in sustainable progress over quick fixes. His coaching philosophy centers on movement quality and confidence-building.",
+              "fieldType4": "Text",
+              "fieldId4": "8822dce8-5ea3-47a4-bb89-4f44bf7867a2",
+              "field5": "View Profile",
+              "fieldType5": "Text",
+              "fieldId5": "c03bdc33-6d6b-4d88-8fcc-2733594c29f5",
+              "field6": "https://example.com/coaches/alex-rivera",
+              "fieldType6": "Text",
+              "fieldId6": "ae4b3919-59e6-4abe-bb04-acc5336d9f3a"
+            },
+            {
+              "field1": "Jordan Lee",
+              "fieldType1": "Text",
+              "fieldId1": "aca3029d-42f0-466c-949b-54cbda9a7e60",
+              "field2": "MS, ACSM-EP, RYT",
+              "fieldType2": "Text",
+              "fieldId2": "31e8ab72-a730-40b9-a241-1e158d1f2333",
+              "field3": "Postpartum Recovery",
+              "fieldType3": "Text",
+              "fieldId3": "5b9b2999-ee5e-4621-80c0-afa27e8af537",
+              "field4": "Jordan specializes in guiding new and expecting mothers through safe, effective movement. Her approach blends evidence-based rehab principles with compassionate, holistic support.",
+              "fieldType4": "Text",
+              "fieldId4": "5f9d61d1-7222-4a2e-a56b-92864538e252",
+              "field5": "View Profile",
+              "fieldType5": "Text",
+              "fieldId5": "3f0bc16d-40f6-4292-bb20-c6420ece747c",
+              "field6": "https://example.com/coaches/jordan-lee",
+              "fieldType6": "Text",
+              "fieldId6": "dc5db4d2-a977-46e0-b45e-53bf8246d88c"
+            },
+            {
+              "field1": "Taylor Kim",
+              "fieldType1": "Text",
+              "fieldId1": "57f50318-6e2c-405e-a258-f58fba0abed5",
+              "field2": "CSCS, FMS, USAW-L2",
+              "fieldType2": "Text",
+              "fieldId2": "f7d23cfe-8942-4f78-98aa-7804890643bd",
+              "field3": "Olympic Weightlifting",
+              "fieldType3": "Text",
+              "fieldId3": "62ea140a-49f7-45f8-b745-2efe57eba505",
+              "field4": "Taylor empowers clients to master complex lifts with precision and joy. Her background in biomechanics and movement screening ensures safe, progressive programming for all levels.",
+              "fieldType4": "Text",
+              "fieldId4": "27faeb5f-7b08-417b-9e9d-7cdb23747c38",
+              "field5": "View Profile",
+              "fieldType5": "Text",
+              "fieldId5": "e2bc3f6c-f85c-473e-8c4d-d8e9427f9c3d",
+              "field6": "https://example.com/coaches/taylor-kim",
+              "fieldType6": "Text",
+              "fieldId6": "56b9633f-90f8-4b56-a7a9-e4b11a09d0eb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "sectionId": "24006a7d-80eb-43e1-9e64-4f179d89219a",
+        "sectionName": "Testimonials Carousel",
+        "sectionStatus": "Active",
+        "variations": 1,
+        "sectionType": "",
+        "path": "/client/BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational./Testimonials Carousel/Variation1",
+        "isAiGenerated": true,
+        "pageName": "home",
+        "index": 4
+      },
+      "elements": [
+        {
+          "sectionId": "24006a7d-80eb-43e1-9e64-4f179d89219a",
+          "elementName": "testimonialsSectionHeadline",
+          "fieldId": "49042e85-3160-4e2b-9bfa-1488d6abe7b6",
+          "content": "Real People. Real Results.",
+          "contentType": "Text",
+          "section": "Testimonials Carousel",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "24006a7d-80eb-43e1-9e64-4f179d89219a",
+          "elementName": "testimonialsCarousel",
+          "fieldId": "6519935f-4d44-4358-b1f2-046f9a918f32",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Testimonials Carousel",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+              "fieldType1": "Image",
+              "fieldId1": "ea41a5a9-6a00-4869-a811-f41a84fc888a",
+              "field2": "Alex M., 32, Chicago",
+              "fieldType2": "Text",
+              "fieldId2": "8eb45c96-f1ca-48bb-a81c-9818824b3a99",
+              "field3": "−24 lbs | +12% Strength | 6 months",
+              "fieldType3": "Text",
+              "fieldId3": "beba59e8-32c4-4fc2-8e3f-cb588dda64bd",
+              "field4": "I finally feel strong—not just thinner. This program changed how I see myself.",
+              "fieldType4": "Text",
+              "fieldId4": "773668e3-5244-4f97-b3c1-3c3a7f142daf",
+              "field5": "★★★★★",
+              "fieldType5": "Text",
+              "fieldId5": "1ea34835-fd1d-4710-9d4f-4ad3348d8172"
+            },
+            {
+              "field1": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+              "fieldType1": "Image",
+              "fieldId1": "21538f85-ef71-4913-b69d-dfcf04d14232",
+              "field2": "Sarah T., 28, Austin",
+              "fieldType2": "Text",
+              "fieldId2": "a7bb2e9d-a21c-4df0-930a-dabb26ca7fa7",
+              "field3": "−18 lbs | 3x Weekly Consistency | 4 months",
+              "fieldType3": "Text",
+              "fieldId3": "bfdd55bb-8238-46fa-94c0-c7b678e7a089",
+              "field4": "I was skeptical at first, but the personalized coaching made all the difference.",
+              "fieldType4": "Text",
+              "fieldId4": "4bb9b350-5f08-416b-b6c9-f562c38262e7",
+              "field5": "★★★★★",
+              "fieldType5": "Text",
+              "fieldId5": "4de72093-502c-4b2c-a9a9-98298f9e9c3b"
+            },
+            {
+              "field1": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+              "fieldType1": "Image",
+              "fieldId1": "fc32dfc5-41dd-43af-a171-ec1f20460ddf",
+              "field2": "Marcus J., 41, Denver",
+              "fieldType2": "Text",
+              "fieldId2": "b0056980-074b-4a52-b970-cef100b2ae30",
+              "field3": "+15 lbs Muscle | 5% Body Fat Loss | 8 months",
+              "fieldType3": "Text",
+              "fieldId3": "70858c83-0461-4153-a460-f37f563367d8",
+              "field4": "I’ve tried every program—this is the only one that stuck. The community kept me going.",
+              "fieldType4": "Text",
+              "fieldId4": "11f5f8b9-a1c5-46a7-8b57-8662592fffb2",
+              "field5": "★★★★★",
+              "fieldType5": "Text",
+              "fieldId5": "1d3d78c7-cdc3-4384-8acb-6d82b40b3f8b"
+            }
+          ]
+        },
+        {
+          "sectionId": "24006a7d-80eb-43e1-9e64-4f179d89219a",
+          "elementName": "carouselControls",
+          "fieldId": "2476bb6c-1d4f-44df-9d3f-0459a90ade67",
+          "content": "← →",
+          "contentType": "Text",
+          "section": "Testimonials Carousel",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "24006a7d-80eb-43e1-9e64-4f179d89219a",
+          "elementName": "carouselPaginationDots",
+          "fieldId": "9615b6fa-a0da-42f4-af6b-94c882e45aee",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Testimonials Carousel",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "●",
+              "fieldType1": "Text",
+              "fieldId1": "67cca881-dcec-4d44-b861-e4426e660ff1",
+              "field2": "○",
+              "fieldType2": "Text",
+              "fieldId2": "5b154568-00b7-4ac0-979a-ffd2d74917ae",
+              "field3": "○",
+              "fieldType3": "Text",
+              "fieldId3": "2ba9bb0f-2617-4167-9520-cbc9b67dea0f"
+            }
+          ]
+        },
+        {
+          "sectionId": "24006a7d-80eb-43e1-9e64-4f179d89219a",
+          "elementName": "testimonialsCtaTeaser",
+          "fieldId": "3c36b483-91c9-473f-adf1-dad19d0690f9",
+          "content": "Ready for your transformation?",
+          "contentType": "Text",
+          "section": "Testimonials Carousel",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+        "sectionName": "Enrollment CTA Section",
+        "sectionStatus": "Active",
+        "variations": 1,
+        "sectionType": "",
+        "path": "/client/BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational./Enrollment CTA Section/Variation1",
+        "isAiGenerated": true,
+        "pageName": "home",
+        "index": 5
+      },
+      "elements": [
+        {
+          "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+          "elementName": "enrollmentSectionHeadline",
+          "fieldId": "655d2135-e642-4414-9c07-9fed514b2e6a",
+          "content": "Ready to Transform Your Strength, Energy, and Confidence?",
+          "contentType": "Text",
+          "section": "Enrollment CTA Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+          "elementName": "enrollmentSubheading",
+          "fieldId": "ffa79c85-f721-4976-b275-6c9afcd99955",
+          "content": "Join 500+ clients who’ve built sustainable fitness—no gym required.",
+          "contentType": "Text",
+          "section": "Enrollment CTA Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+          "elementName": "keyBenefitsCards",
+          "fieldId": "34c0ccc9-7cb7-446c-b624-369a18e0b807",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Enrollment CTA Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "Flexible Scheduling",
+              "fieldType1": "Text",
+              "fieldId1": "52b2c422-e985-4033-975d-6fe097385f5b",
+              "field2": "Train on your time, anywhere.",
+              "fieldType2": "Text",
+              "fieldId2": "0d8abb80-e17b-4443-b59a-330d7268664b",
+              "field3": "clock-icon",
+              "fieldType3": "Image",
+              "fieldId3": "1deb5e55-5d1c-490c-a730-1152ab93d313"
+            },
+            {
+              "field1": "Personalized Plans",
+              "fieldType1": "Text",
+              "fieldId1": "767b71a4-4d40-4bac-8ec6-5b3f87d659e1",
+              "field2": "Tailored to your goals & lifestyle.",
+              "fieldType2": "Text",
+              "fieldId2": "6065e5b0-a77a-4693-b540-e9968f5c45b2",
+              "field3": "target-icon",
+              "fieldType3": "Image",
+              "fieldId3": "3ec4f25b-fd6d-4e0c-ac4e-6eeedef64de8"
+            },
+            {
+              "field1": "Real-Time Feedback",
+              "fieldType1": "Text",
+              "fieldId1": "051c8cf3-1686-4dbe-9e81-60aeb7ace470",
+              "field2": "Coaches guide every rep.",
+              "fieldType2": "Text",
+              "fieldId2": "6eb35ece-2a54-45bd-aa7b-969ae62f9043",
+              "field3": "chat-icon",
+              "fieldType3": "Image",
+              "fieldId3": "6cd20f81-3190-427a-a801-bfea7b5604ca"
+            },
+            {
+              "field1": "Progress Tracking",
+              "fieldType1": "Text",
+              "fieldId1": "e23f076d-68d9-4b7d-81f2-e24217ce962d",
+              "field2": "Visualize your transformation.",
+              "fieldType2": "Text",
+              "fieldId2": "12f5bf03-5f93-40ed-8cc6-60d08ee1a7c8",
+              "field3": "chart-icon",
+              "fieldType3": "Image",
+              "fieldId3": "07d14f5b-a902-41b0-a26d-5141646579ae"
+            }
+          ]
+        },
+        {
+          "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+          "elementName": "socialProofBadge",
+          "fieldId": "9592d5db-f2c3-4d46-8063-b03b86129a00",
+          "content": "★★★★★ 4.9/5 from 200+ Reviews",
+          "contentType": "Text",
+          "section": "Enrollment CTA Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+          "elementName": "primaryCtaButton",
+          "fieldId": "a7e883e7-28a4-4c0d-80ce-34ac8d4ad9b5",
+          "content": "Start Your Free Assessment",
+          "contentType": "Text",
+          "section": "Enrollment CTA Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+          "elementName": "secondaryTrustSignal",
+          "fieldId": "f0d85e38-89cd-4caa-bc73-25a9500b2a10",
+          "content": "No equipment needed • 30-day money-back guarantee • Certified coaches",
+          "contentType": "Text",
+          "section": "Enrollment CTA Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+          "elementName": "faqTeaserAccordion",
+          "fieldId": "5bcaf316-21fc-4956-a704-fbd16bbc8123",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Enrollment CTA Section",
+          "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "Is this suitable for beginners?",
+              "fieldType1": "Text",
+              "fieldId1": "68813225-212b-410d-91a8-35808dfd7b74",
+              "field2": "Absolutely! We customize every plan to your starting point.",
+              "fieldType2": "Text",
+              "fieldId2": "aa324307-0837-480e-aec7-3cdee9ec5183"
+            },
+            {
+              "field1": "How much time per week is required?",
+              "fieldType1": "Text",
+              "fieldId1": "275c47c2-7d05-41dc-bb20-45b09c4aeb97",
+              "field2": "As little as 30 minutes, 3x/week—flexible for your schedule.",
+              "fieldType2": "Text",
+              "fieldId2": "afd4d4c2-32bf-42dd-b6d3-7936ff6bb010"
+            },
+            {
+              "field1": "Can I pause or cancel anytime?",
+              "fieldType1": "Text",
+              "fieldId1": "1d538e84-2669-4bae-a746-c82e0b832b61",
+              "field2": "Yes—no long-term contracts. Pause or cancel with 1 click.",
+              "fieldType2": "Text",
+              "fieldId2": "cdc00b90-7248-4fb2-b2b8-9ff284b4049c"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resolved_cms": {
+    "heroSection": {
+      "heroBackgroundMedia": {
+        "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+        "elementName": "heroBackgroundMedia",
+        "fieldId": "e24debaf-78bc-4567-9f03-748c97b36e44",
+        "content": "https://example.com/hero-athlete-mid-rep.jpg",
+        "contentType": "Image",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "heroMainHeadline": {
+        "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+        "elementName": "heroMainHeadline",
+        "fieldId": "d8e8446e-936d-4a3e-9af3-bff2115f21b3",
+        "content": "Build Strength. Own Your Transformation.",
+        "contentType": "Text",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "heroSubheading": {
+        "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+        "elementName": "heroSubheading",
+        "fieldId": "a5e6d7f5-2fb4-4ec4-8b88-b5e937e08889",
+        "content": "Science-backed, coach-led online personal training for all levels",
+        "contentType": "Text",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "primaryCtaButton": {
+        "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+        "elementName": "primaryCtaButton",
+        "fieldId": "e8312775-8782-40d5-8f28-bd308a71c509",
+        "content": "Start Your Transformation",
+        "contentType": "Text",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "primaryCtaLinkUrl": {
+        "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+        "elementName": "primaryCtaLinkUrl",
+        "fieldId": "4abf6cfb-5d8c-45e9-9dd5-ef35580ab1c1",
+        "content": "/programs",
+        "contentType": "Text",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "secondaryCtaLink": {
+        "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+        "elementName": "secondaryCtaLink",
+        "fieldId": "410a4714-dfaa-414c-b899-e5c3a6c20acc",
+        "content": "View Programs →",
+        "contentType": "Text",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "secondaryCtaLinkUrl": {
+        "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+        "elementName": "secondaryCtaLinkUrl",
+        "fieldId": "f774fd14-62be-4442-9eba-d16250bf3eb3",
+        "content": "/programs",
+        "contentType": "Text",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "trustedByLogos": {
+        "sectionId": "2da206bf-3b61-45c0-a48d-b59f93fbddf0",
+        "elementName": "trustedByLogos",
+        "fieldId": "da7d95d0-ada6-4862-9822-b5661ded8328",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "Men’s Health",
+            "fieldType1": "Text",
+            "fieldId1": "cc304de7-f1c3-49e7-83ff-36da5dc7b28c",
+            "field2": "https://example.com/logos/mens-health-logo.png",
+            "fieldType2": "Image",
+            "fieldId2": "b869007d-f877-4b23-ab52-e929e40a6795"
+          },
+          {
+            "field1": "ACE",
+            "fieldType1": "Text",
+            "fieldId1": "738b0dc0-e277-4518-a55a-db09af134617",
+            "field2": "https://example.com/logos/ace-logo.png",
+            "fieldType2": "Image",
+            "fieldId2": "2f610dbe-fc86-4a92-93a4-309655a4eabe"
+          },
+          {
+            "field1": "NASM",
+            "fieldType1": "Text",
+            "fieldId1": "97775a7d-a354-4c78-8941-89dedff616d0",
+            "field2": "https://example.com/logos/nasm-logo.png",
+            "fieldType2": "Image",
+            "fieldId2": "752c3f84-7386-448d-9513-629e07b10348"
+          }
+        ]
+      }
+    },
+    "trainingProgramsGrid": {
+      "trainingProgramsSectionHeadline": {
+        "sectionId": "8efd4564-b931-47b2-8614-9d93ce038ae4",
+        "elementName": "trainingProgramsSectionHeadline",
+        "fieldId": "9241a29f-7a00-4b64-a2cf-6c382034c7d3",
+        "content": "Find Your Perfect Program",
+        "contentType": "Text",
+        "section": "Training Programs Grid",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "difficultyFilterTabs": {
+        "sectionId": "8efd4564-b931-47b2-8614-9d93ce038ae4",
+        "elementName": "difficultyFilterTabs",
+        "fieldId": "a1aee1ae-5e03-4229-8259-78720e15fb2f",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Training Programs Grid",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "Beginner",
+            "fieldType1": "Text",
+            "fieldId1": "26f50b2b-24a2-44fc-8e05-0dbd9abc4250",
+            "field2": "start",
+            "fieldType2": "Text",
+            "fieldId2": "667aa6ab-0b74-4829-a942-2cb917390cbb"
+          },
+          {
+            "field1": "Intermediate",
+            "fieldType1": "Text",
+            "fieldId1": "91d7b966-6dc1-4064-9ee7-344edf84ad90",
+            "field2": "intermediate",
+            "fieldType2": "Text",
+            "fieldId2": "5776318b-453b-4c5b-9e63-d940be897d5a"
+          },
+          {
+            "field1": "Advanced",
+            "fieldType1": "Text",
+            "fieldId1": "9c3e1a9b-1369-4db6-a6cf-32a63a1345cc",
+            "field2": "advanced",
+            "fieldType2": "Text",
+            "fieldId2": "22ff952f-1ef2-46ac-bb99-66f5ef76a719"
+          }
+        ]
+      },
+      "trainingProgramCards": {
+        "sectionId": "8efd4564-b931-47b2-8614-9d93ce038ae4",
+        "elementName": "trainingProgramCards",
+        "fieldId": "5d12e017-ded4-499c-a878-b067285ffd32",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Training Programs Grid",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "https://placehold.co/600x400/orange/white?text=Strength+Foundation",
+            "fieldType1": "Image",
+            "fieldId1": "a41aac39-0c77-4ad1-b1fb-256575991589",
+            "field2": "7-Day Strength Foundation",
+            "fieldType2": "Text",
+            "fieldId2": "d6563693-0e6e-445e-9c08-ec0d4f1e9b10",
+            "field3": "Beginner",
+            "fieldType3": "Text",
+            "fieldId3": "0f61a96a-8a34-4b9c-8643-6e3a4e4a8305",
+            "field4": "4 Weeks",
+            "fieldType4": "Text",
+            "fieldId4": "0c60969a-7ad9-42ec-9e55-20b449d346a4",
+            "field5": "Strength",
+            "fieldType5": "Text",
+            "fieldId5": "cce31474-2c22-436a-bc1b-50bd943720e3",
+            "field6": "No Equipment",
+            "fieldType6": "Text",
+            "fieldId6": "649275e1-cc79-458d-9758-7b98636693db",
+            "field7": "Start Now",
+            "fieldType7": "Text",
+            "fieldId7": "ba8b4e19-a851-4384-9f3d-ef6ae0f53314"
+          },
+          {
+            "field1": "https://placehold.co/600x400/red/white?text=HIIT+Ignition",
+            "fieldType1": "Image",
+            "fieldId1": "43545237-a108-480a-9a06-2ed57e6bb99c",
+            "field2": "HIIT Ignition: 2-Week Blast",
+            "fieldType2": "Text",
+            "fieldId2": "416a621b-0665-436e-9015-23221a588abb",
+            "field3": "Intermediate",
+            "fieldType3": "Text",
+            "fieldId3": "ce2e32d3-1368-4f3c-bcca-f2ca0108860a",
+            "field4": "2 Weeks",
+            "fieldType4": "Text",
+            "fieldId4": "3f6c39a5-a693-4de5-850e-a7fc5ddecb69",
+            "field5": "Cardio",
+            "fieldType5": "Text",
+            "fieldId5": "199d10a1-7a72-4710-a076-ad80a39e1cbf",
+            "field6": "Minimal Equipment",
+            "fieldType6": "Text",
+            "fieldId6": "1e9670a5-8e43-4f2f-9931-d50ba3db2915",
+            "field7": "Learn More",
+            "fieldType7": "Text",
+            "fieldId7": "093028e2-2c0f-40ff-8ca3-23d5c8fb78e2"
+          },
+          {
+            "field1": "https://placehold.co/600x400/black/white?text=Power+Elite",
+            "fieldType1": "Image",
+            "fieldId1": "31ee4214-c407-4a5f-a484-73222841fe16",
+            "field2": "Power Elite: 8-Week Max",
+            "fieldType2": "Text",
+            "fieldId2": "0783150a-a166-4fee-9843-a1d7339498d2",
+            "field3": "Advanced",
+            "fieldType3": "Text",
+            "fieldId3": "aef39203-25c6-4f5e-95b1-74c26c31b2d4",
+            "field4": "8 Weeks",
+            "fieldType4": "Text",
+            "fieldId4": "8058f76d-f321-4b85-b400-cabe37e7f4ff",
+            "field5": "Strength",
+            "fieldType5": "Text",
+            "fieldId5": "562afc67-bce8-4d98-bd2e-e048c0c4cac4",
+            "field6": "Barbell Required",
+            "fieldType6": "Text",
+            "fieldId6": "614dee5f-3b04-4e89-9dfe-f8f9715a1d49",
+            "field7": "Start Now",
+            "fieldType7": "Text",
+            "fieldId7": "34a0cfae-f28e-4fcc-9f75-ce51cb085e77"
+          }
+        ]
+      },
+      "emptyStateMessage": {
+        "sectionId": "8efd4564-b931-47b2-8614-9d93ce038ae4",
+        "elementName": "emptyStateMessage",
+        "fieldId": "4de25ffb-ee98-46b4-8221-57dcd925fc81",
+        "content": "No programs match this level—try adjusting filters",
+        "contentType": "Text",
+        "section": "Training Programs Grid",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      }
+    },
+    "coachCredentialsShowcase": {
+      "coachCredentialsSectionHeadline": {
+        "sectionId": "4e07e77c-24c5-4381-b370-f4460c28ca6c",
+        "elementName": "coachCredentialsSectionHeadline",
+        "fieldId": "469f3aa9-98a6-4b20-a90c-f7b17552d29e",
+        "content": "Trained by the Best",
+        "contentType": "Text",
+        "section": "Coach Credentials Showcase",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "coachCredentialsSubtitle": {
+        "sectionId": "4e07e77c-24c5-4381-b370-f4460c28ca6c",
+        "elementName": "coachCredentialsSubtitle",
+        "fieldId": "0cf6c375-05da-455f-9066-9ef0d9d594da",
+        "content": "Meet our certified experts",
+        "contentType": "Text",
+        "section": "Coach Credentials Showcase",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "coachCredentialsStatsStrip": {
+        "sectionId": "4e07e77c-24c5-4381-b370-f4460c28ca6c",
+        "elementName": "coachCredentialsStatsStrip",
+        "fieldId": "4ce00bf5-1e0a-4855-9c2e-6028ae78de85",
+        "content": "15+ years combined coaching experience | 500+ client transformations",
+        "contentType": "Text",
+        "section": "Coach Credentials Showcase",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "certificationBadges": {
+        "sectionId": "4e07e77c-24c5-4381-b370-f4460c28ca6c",
+        "elementName": "certificationBadges",
+        "fieldId": "03c7ae77-f6d1-4a8b-856d-5ef6ef2669b2",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Coach Credentials Showcase",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "NASM",
+            "fieldType1": "Text",
+            "fieldId1": "a0f3a879-e6c8-435c-8f56-2be54b775293",
+            "field2": "ACE",
+            "fieldType2": "Text",
+            "fieldId2": "9050f4c8-48b5-4a71-a51f-787a5e5933a3",
+            "field3": "ISSA",
+            "fieldType3": "Text",
+            "fieldId3": "978a6f2e-98be-46ce-97e5-0a58033a5b2d"
+          }
+        ]
+      },
+      "coachCards": {
+        "sectionId": "4e07e77c-24c5-4381-b370-f4460c28ca6c",
+        "elementName": "coachCards",
+        "fieldId": "54510d1c-aedd-40b5-87fc-a94f00852dbd",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Coach Credentials Showcase",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "Alex Rivera",
+            "fieldType1": "Text",
+            "fieldId1": "23218b5b-fe0b-4b92-b31e-1db313f76bf2",
+            "field2": "CSCS, NASM-CPT",
+            "fieldType2": "Text",
+            "fieldId2": "346c231a-ee21-43ed-8ad0-091ec19284b6",
+            "field3": "Strength & Conditioning",
+            "fieldType3": "Text",
+            "fieldId3": "2030252f-df76-48b4-a0b4-7082292d344c",
+            "field4": "With 8 years of experience helping athletes and everyday clients build functional strength, Alex believes in sustainable progress over quick fixes. His coaching philosophy centers on movement quality and confidence-building.",
+            "fieldType4": "Text",
+            "fieldId4": "8822dce8-5ea3-47a4-bb89-4f44bf7867a2",
+            "field5": "View Profile",
+            "fieldType5": "Text",
+            "fieldId5": "c03bdc33-6d6b-4d88-8fcc-2733594c29f5",
+            "field6": "https://example.com/coaches/alex-rivera",
+            "fieldType6": "Text",
+            "fieldId6": "ae4b3919-59e6-4abe-bb04-acc5336d9f3a"
+          },
+          {
+            "field1": "Jordan Lee",
+            "fieldType1": "Text",
+            "fieldId1": "aca3029d-42f0-466c-949b-54cbda9a7e60",
+            "field2": "MS, ACSM-EP, RYT",
+            "fieldType2": "Text",
+            "fieldId2": "31e8ab72-a730-40b9-a241-1e158d1f2333",
+            "field3": "Postpartum Recovery",
+            "fieldType3": "Text",
+            "fieldId3": "5b9b2999-ee5e-4621-80c0-afa27e8af537",
+            "field4": "Jordan specializes in guiding new and expecting mothers through safe, effective movement. Her approach blends evidence-based rehab principles with compassionate, holistic support.",
+            "fieldType4": "Text",
+            "fieldId4": "5f9d61d1-7222-4a2e-a56b-92864538e252",
+            "field5": "View Profile",
+            "fieldType5": "Text",
+            "fieldId5": "3f0bc16d-40f6-4292-bb20-c6420ece747c",
+            "field6": "https://example.com/coaches/jordan-lee",
+            "fieldType6": "Text",
+            "fieldId6": "dc5db4d2-a977-46e0-b45e-53bf8246d88c"
+          },
+          {
+            "field1": "Taylor Kim",
+            "fieldType1": "Text",
+            "fieldId1": "57f50318-6e2c-405e-a258-f58fba0abed5",
+            "field2": "CSCS, FMS, USAW-L2",
+            "fieldType2": "Text",
+            "fieldId2": "f7d23cfe-8942-4f78-98aa-7804890643bd",
+            "field3": "Olympic Weightlifting",
+            "fieldType3": "Text",
+            "fieldId3": "62ea140a-49f7-45f8-b745-2efe57eba505",
+            "field4": "Taylor empowers clients to master complex lifts with precision and joy. Her background in biomechanics and movement screening ensures safe, progressive programming for all levels.",
+            "fieldType4": "Text",
+            "fieldId4": "27faeb5f-7b08-417b-9e9d-7cdb23747c38",
+            "field5": "View Profile",
+            "fieldType5": "Text",
+            "fieldId5": "e2bc3f6c-f85c-473e-8c4d-d8e9427f9c3d",
+            "field6": "https://example.com/coaches/taylor-kim",
+            "fieldType6": "Text",
+            "fieldId6": "56b9633f-90f8-4b56-a7a9-e4b11a09d0eb"
+          }
+        ]
+      }
+    },
+    "testimonialsCarousel": {
+      "testimonialsSectionHeadline": {
+        "sectionId": "24006a7d-80eb-43e1-9e64-4f179d89219a",
+        "elementName": "testimonialsSectionHeadline",
+        "fieldId": "49042e85-3160-4e2b-9bfa-1488d6abe7b6",
+        "content": "Real People. Real Results.",
+        "contentType": "Text",
+        "section": "Testimonials Carousel",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "testimonialsCarousel": {
+        "sectionId": "24006a7d-80eb-43e1-9e64-4f179d89219a",
+        "elementName": "testimonialsCarousel",
+        "fieldId": "6519935f-4d44-4358-b1f2-046f9a918f32",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Testimonials Carousel",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            "fieldType1": "Image",
+            "fieldId1": "ea41a5a9-6a00-4869-a811-f41a84fc888a",
+            "field2": "Alex M., 32, Chicago",
+            "fieldType2": "Text",
+            "fieldId2": "8eb45c96-f1ca-48bb-a81c-9818824b3a99",
+            "field3": "−24 lbs | +12% Strength | 6 months",
+            "fieldType3": "Text",
+            "fieldId3": "beba59e8-32c4-4fc2-8e3f-cb588dda64bd",
+            "field4": "I finally feel strong—not just thinner. This program changed how I see myself.",
+            "fieldType4": "Text",
+            "fieldId4": "773668e3-5244-4f97-b3c1-3c3a7f142daf",
+            "field5": "★★★★★",
+            "fieldType5": "Text",
+            "fieldId5": "1ea34835-fd1d-4710-9d4f-4ad3348d8172"
+          },
+          {
+            "field1": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            "fieldType1": "Image",
+            "fieldId1": "21538f85-ef71-4913-b69d-dfcf04d14232",
+            "field2": "Sarah T., 28, Austin",
+            "fieldType2": "Text",
+            "fieldId2": "a7bb2e9d-a21c-4df0-930a-dabb26ca7fa7",
+            "field3": "−18 lbs | 3x Weekly Consistency | 4 months",
+            "fieldType3": "Text",
+            "fieldId3": "bfdd55bb-8238-46fa-94c0-c7b678e7a089",
+            "field4": "I was skeptical at first, but the personalized coaching made all the difference.",
+            "fieldType4": "Text",
+            "fieldId4": "4bb9b350-5f08-416b-b6c9-f562c38262e7",
+            "field5": "★★★★★",
+            "fieldType5": "Text",
+            "fieldId5": "4de72093-502c-4b2c-a9a9-98298f9e9c3b"
+          },
+          {
+            "field1": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+            "fieldType1": "Image",
+            "fieldId1": "fc32dfc5-41dd-43af-a171-ec1f20460ddf",
+            "field2": "Marcus J., 41, Denver",
+            "fieldType2": "Text",
+            "fieldId2": "b0056980-074b-4a52-b970-cef100b2ae30",
+            "field3": "+15 lbs Muscle | 5% Body Fat Loss | 8 months",
+            "fieldType3": "Text",
+            "fieldId3": "70858c83-0461-4153-a460-f37f563367d8",
+            "field4": "I’ve tried every program—this is the only one that stuck. The community kept me going.",
+            "fieldType4": "Text",
+            "fieldId4": "11f5f8b9-a1c5-46a7-8b57-8662592fffb2",
+            "field5": "★★★★★",
+            "fieldType5": "Text",
+            "fieldId5": "1d3d78c7-cdc3-4384-8acb-6d82b40b3f8b"
+          }
+        ]
+      },
+      "carouselControls": {
+        "sectionId": "24006a7d-80eb-43e1-9e64-4f179d89219a",
+        "elementName": "carouselControls",
+        "fieldId": "2476bb6c-1d4f-44df-9d3f-0459a90ade67",
+        "content": "← →",
+        "contentType": "Text",
+        "section": "Testimonials Carousel",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "carouselPaginationDots": {
+        "sectionId": "24006a7d-80eb-43e1-9e64-4f179d89219a",
+        "elementName": "carouselPaginationDots",
+        "fieldId": "9615b6fa-a0da-42f4-af6b-94c882e45aee",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Testimonials Carousel",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "●",
+            "fieldType1": "Text",
+            "fieldId1": "67cca881-dcec-4d44-b861-e4426e660ff1",
+            "field2": "○",
+            "fieldType2": "Text",
+            "fieldId2": "5b154568-00b7-4ac0-979a-ffd2d74917ae",
+            "field3": "○",
+            "fieldType3": "Text",
+            "fieldId3": "2ba9bb0f-2617-4167-9520-cbc9b67dea0f"
+          }
+        ]
+      },
+      "testimonialsCtaTeaser": {
+        "sectionId": "24006a7d-80eb-43e1-9e64-4f179d89219a",
+        "elementName": "testimonialsCtaTeaser",
+        "fieldId": "3c36b483-91c9-473f-adf1-dad19d0690f9",
+        "content": "Ready for your transformation?",
+        "contentType": "Text",
+        "section": "Testimonials Carousel",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      }
+    },
+    "enrollmentCtaSection": {
+      "enrollmentSectionHeadline": {
+        "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+        "elementName": "enrollmentSectionHeadline",
+        "fieldId": "655d2135-e642-4414-9c07-9fed514b2e6a",
+        "content": "Ready to Transform Your Strength, Energy, and Confidence?",
+        "contentType": "Text",
+        "section": "Enrollment CTA Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "enrollmentSubheading": {
+        "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+        "elementName": "enrollmentSubheading",
+        "fieldId": "ffa79c85-f721-4976-b275-6c9afcd99955",
+        "content": "Join 500+ clients who’ve built sustainable fitness—no gym required.",
+        "contentType": "Text",
+        "section": "Enrollment CTA Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "keyBenefitsCards": {
+        "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+        "elementName": "keyBenefitsCards",
+        "fieldId": "34c0ccc9-7cb7-446c-b624-369a18e0b807",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Enrollment CTA Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "Flexible Scheduling",
+            "fieldType1": "Text",
+            "fieldId1": "52b2c422-e985-4033-975d-6fe097385f5b",
+            "field2": "Train on your time, anywhere.",
+            "fieldType2": "Text",
+            "fieldId2": "0d8abb80-e17b-4443-b59a-330d7268664b",
+            "field3": "clock-icon",
+            "fieldType3": "Image",
+            "fieldId3": "1deb5e55-5d1c-490c-a730-1152ab93d313"
+          },
+          {
+            "field1": "Personalized Plans",
+            "fieldType1": "Text",
+            "fieldId1": "767b71a4-4d40-4bac-8ec6-5b3f87d659e1",
+            "field2": "Tailored to your goals & lifestyle.",
+            "fieldType2": "Text",
+            "fieldId2": "6065e5b0-a77a-4693-b540-e9968f5c45b2",
+            "field3": "target-icon",
+            "fieldType3": "Image",
+            "fieldId3": "3ec4f25b-fd6d-4e0c-ac4e-6eeedef64de8"
+          },
+          {
+            "field1": "Real-Time Feedback",
+            "fieldType1": "Text",
+            "fieldId1": "051c8cf3-1686-4dbe-9e81-60aeb7ace470",
+            "field2": "Coaches guide every rep.",
+            "fieldType2": "Text",
+            "fieldId2": "6eb35ece-2a54-45bd-aa7b-969ae62f9043",
+            "field3": "chat-icon",
+            "fieldType3": "Image",
+            "fieldId3": "6cd20f81-3190-427a-a801-bfea7b5604ca"
+          },
+          {
+            "field1": "Progress Tracking",
+            "fieldType1": "Text",
+            "fieldId1": "e23f076d-68d9-4b7d-81f2-e24217ce962d",
+            "field2": "Visualize your transformation.",
+            "fieldType2": "Text",
+            "fieldId2": "12f5bf03-5f93-40ed-8cc6-60d08ee1a7c8",
+            "field3": "chart-icon",
+            "fieldType3": "Image",
+            "fieldId3": "07d14f5b-a902-41b0-a26d-5141646579ae"
+          }
+        ]
+      },
+      "socialProofBadge": {
+        "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+        "elementName": "socialProofBadge",
+        "fieldId": "9592d5db-f2c3-4d46-8063-b03b86129a00",
+        "content": "★★★★★ 4.9/5 from 200+ Reviews",
+        "contentType": "Text",
+        "section": "Enrollment CTA Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "primaryCtaButton": {
+        "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+        "elementName": "primaryCtaButton",
+        "fieldId": "a7e883e7-28a4-4c0d-80ce-34ac8d4ad9b5",
+        "content": "Start Your Free Assessment",
+        "contentType": "Text",
+        "section": "Enrollment CTA Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "secondaryTrustSignal": {
+        "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+        "elementName": "secondaryTrustSignal",
+        "fieldId": "f0d85e38-89cd-4caa-bc73-25a9500b2a10",
+        "content": "No equipment needed • 30-day money-back guarantee • Certified coaches",
+        "contentType": "Text",
+        "section": "Enrollment CTA Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "faqTeaserAccordion": {
+        "sectionId": "c6a04864-4f72-4337-8475-82b0bdd8dee7",
+        "elementName": "faqTeaserAccordion",
+        "fieldId": "5bcaf316-21fc-4956-a704-fbd16bbc8123",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Enrollment CTA Section",
+        "projectName": "BuildaUIlayoutforanonlinepersonaltrainingplatform.Itmustconsistofaherosectionwithatransformationshowcase,atrainingprogramssectionwithdifficultylevels,andacoachprofilesectionwithcredentials.ItmustalsohaveaclienttestimonialscarouselandaprogramenrollmentCTA.Keeptheappealenergetic,bold,andmotivational.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "Is this suitable for beginners?",
+            "fieldType1": "Text",
+            "fieldId1": "68813225-212b-410d-91a8-35808dfd7b74",
+            "field2": "Absolutely! We customize every plan to your starting point.",
+            "fieldType2": "Text",
+            "fieldId2": "aa324307-0837-480e-aec7-3cdee9ec5183"
+          },
+          {
+            "field1": "How much time per week is required?",
+            "fieldType1": "Text",
+            "fieldId1": "275c47c2-7d05-41dc-bb20-45b09c4aeb97",
+            "field2": "As little as 30 minutes, 3x/week—flexible for your schedule.",
+            "fieldType2": "Text",
+            "fieldId2": "afd4d4c2-32bf-42dd-b6d3-7936ff6bb010"
+          },
+          {
+            "field1": "Can I pause or cancel anytime?",
+            "fieldType1": "Text",
+            "fieldId1": "1d538e84-2669-4bae-a746-c82e0b832b61",
+            "field2": "Yes—no long-term contracts. Pause or cancel with 1 click.",
+            "fieldType2": "Text",
+            "fieldId2": "cdc00b90-7248-4fb2-b2b8-9ff284b4049c"
+          }
+        ]
+      }
+    }
+  }
+}

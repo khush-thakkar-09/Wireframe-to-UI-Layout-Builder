@@ -12,7 +12,13 @@ const bedrockProvider = createAmazonBedrock({
   region: "us-east-1",
 });
 
-export const SECTION_CODER_SYSTEM_PROMPT = `You are an expert frontend React developer specializing in modern, responsive, visually stunning web design. You will be given a detailed description of a single section of a web page, its layout tree elements (with per-element styling data), and the section's EXACT color theme. Your job is to write the React JSX and CSS code for ONLY this section.
+export const SECTION_CODER_SYSTEM_PROMPT = `You are an expert frontend React developer specializing in modern, responsive, visually stunning web design. You will be given:
+1. A detailed description of a single section of a web page
+2. Its layout tree elements (with per-element styling data)
+3. The section's EXACT color theme
+4. The exact CMS schema definition generated for this section
+
+Your job is to write the React JSX and CSS code for ONLY this section, making sure all text is bound dynamically to the CMS data.
 
 ### OUTPUT FORMAT (STRICT):
 You MUST output EXACTLY two fenced code blocks. Do NOT use <style> tags.
@@ -20,11 +26,28 @@ Do not include any text before or after the code blocks.
 
 Example Expected Output:
 \`\`\`jsx
-export default function {section_component_name}() {
+export default function {section_component_name}({ cmsData }) {
+  // Extract fields for clean access from elements array
+  const headlineEl = cmsData?.elements?.find(e => e.elementName === 'exampleHeadline');
+  const headline = headlineEl?.content || "Default Headline";
+  const headlineId = headlineEl?.fieldId;
+
+  const featureListEl = cmsData?.elements?.find(e => e.elementName === 'featureList');
+  const featureList = featureListEl?.loop || [];
+
   return (
     <section className="section-{section_number}">
-      <h1>Example Headline</h1>
-      ...
+      <h1 data-field-id={headlineId}>{headline}</h1>
+      
+      {/* Example loop */}
+      <div className="cards-grid">
+        {featureList.map((item, idx) => (
+          <div key={idx} className="card">
+            <h3 data-field-id={item.fieldId1}>{item.field1}</h3>
+            <p data-field-id={item.fieldId2}>{item.field2}</p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
@@ -33,13 +56,14 @@ export default function {section_component_name}() {
 .section-{section_number} {
   /* section styling */
 }
-\`
-\`\`
+\`\`\`
 
 ### REACT & JSX RULES (THE 3 GOLDEN RULES):
 1. **Single Root Element**: The component must return a single wrapping \`<section>\` element with \`className="section-{section_number}"\`.
 2. **className instead of class**: All HTML classes MUST use \`className\`. Use \`htmlFor\` instead of \`for\`.
-3. **Static Content**: Write clean, hardcoded semantic JSX using the EXACT text_content values from each element's data. Do NOT use any cmsData prop or variable mapping.
+3. **CMS Bindings (CRITICAL)**: Do NOT hardcode visible text. Bind all text elements to the \`cmsData\` prop passed to the component.
+   - For standard Text/Image items, query the elements array: \`const el = cmsData?.elements?.find(e => e.elementName === 'yourElementName')\`. Use \`el?.content\` and add the \`data-field-id={el?.fieldId}\` attribute.
+   - For Cards/Loop items, query the loop array: \`const loopItems = cmsData?.elements?.find(e => e.elementName === 'yourCollectionName')?.loop || []\`. Map over \`loopItems\`, access text as \`item.field1\`, \`item.field2\` etc., and add \`data-field-id={item.fieldId1}\`, \`data-field-id={item.fieldId2}\` to the corresponding tags.
    - Use 'useState' for simple interactive state changes if needed (like accordion toggle or tab selection).
    - Do NOT add any 'id' attribute to the section.
 
@@ -79,25 +103,27 @@ The object detection model sometimes produces overlapping bounding boxes — two
 
 ### WHAT NOT TO DO (ANTI-HALLUCINATION):
 - Do NOT use un-scoped global keyframes or styles.
-- Do NOT invent text — use the exact text_content values provided in the layout tree elements.
+- Do NOT invent text — bind strictly to the CMS elements provided.
+- Do NOT hardcode the CMS text strings. Always fetch via \`cmsData\`.
 
 Rule for image_media:
 - Make sure that whenever you come across Image Media, the image_media should have the height and width exactly as provided in the layout tree elements. DO NOT code any text into that image to represent it. Either use an external image of similar description or just let the Image outline be. NEVER use "Image" or any text as a placeholder for the image. Either you put the right image in its place or just let the Image outline be. NEVER add any text on your own inside the Image.
 `;
 
 /**
- * Calls the Qwen Coder model to generate React JSX (with raw static text placeholders) and CSS for a specific section.
+ * Calls the Qwen Coder model to generate React JSX (CMS-bound) and CSS for a specific section.
  */
 export async function generateSectionCode(
   section: Section,
-  sectionNumber: number
+  sectionNumber: number,
+  cmsSectionData: any
 ): Promise<{ jsx: string; css: string }> {
   const componentName = section.section_name.replace(/[^a-zA-Z0-9]/g, "");
   logger.info("Coding Agent", `Generating code for section ${sectionNumber}: "${section.section_name}"...`);
 
   const modelId = env.qwenCodingModel || "qwen.qwen3-coder-next";
 
-  // Build section description containing layout elements, metadata, and theme colors
+  // Build section description containing layout elements, metadata, theme colors, and the CMS schema
   const sectionDescription = `
 Section Name: ${section.section_name}
 Section Number: ${sectionNumber}
@@ -111,8 +137,12 @@ Section Theme (EXACT colors from the original design — use these directly):
   accent_color: ${section.theme.accent_color}
   accent_hover_color: ${section.theme.accent_hover_color}
 
-Section UI Layout Elements (with per-element text_content, text_color, background_color):
+Section UI Layout Elements:
 ${JSON.stringify(section.elements, null, 2)}
+
+---
+CMS Schema Definition (Bind JSX text / loops to these elementName keys strictly):
+${JSON.stringify(cmsSectionData, null, 2)}
 `;
 
   const prompt = `${SECTION_CODER_SYSTEM_PROMPT}

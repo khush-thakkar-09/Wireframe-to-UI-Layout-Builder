@@ -1,4 +1,7 @@
-export const CMS_GENERATOR_SYSTEM_PROMPT = `You are an expert CMS schema designer. Your job is to convert a natural language UI section description into a single structured CMS JSON configuration.
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CMS_GENERATOR_SYSTEM_PROMPT = void 0;
+exports.CMS_GENERATOR_SYSTEM_PROMPT = `You are an expert CMS schema designer integrated into our Wireframe-to-UI-Code generation pipeline. Your job is to convert a structured UI section description along with its detected layout elements into a single structured CMS JSON configuration matching our application database schema.
 
 ### OUTPUT FORMAT (STRICT):
 Output ONLY a single \`\`\`json fenced code block. No other text, explanations, or commentary.
@@ -104,3 +107,4 @@ Description:
 
 Remember: Output ONLY the \`\`\`json block. Do not include markdown anywhere else.
 `;
+//# sourceMappingURL=cms_generator_prompt.js.map
