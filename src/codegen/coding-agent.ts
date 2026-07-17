@@ -106,8 +106,10 @@ The object detection model sometimes produces overlapping bounding boxes — two
 - Do NOT invent text — bind strictly to the CMS elements provided.
 - Do NOT hardcode the CMS text strings. Always fetch via \`cmsData\`.
 
-Rule for image_media:
-- Make sure that whenever you come across Image Media, the image_media should have the height and width exactly as provided in the layout tree elements. DO NOT code any text into that image to represent it. Either use an external image of similar description or just let the Image outline be. NEVER use "Image" or any text as a placeholder for the image. Either you put the right image in its place or just let the Image outline be. NEVER add any text on your own inside the Image.
+Rule for image_media / logo / images:
+- **Strict Asset Source**: Whenever you render an image element (including `image_media`, `logo`, or any visual graphics), you MUST use `/default_image.png` as the image source. Do NOT use mock URLs, do NOT invent external placeholders, and do NOT leave the outline empty. Always set `src="/default_image.png"`.
+- **Sizing**: Size the image using CSS width and height to match the element's bounding box.
+- **Nested Overlays**: If an image element contains child elements in the layout tree (such as text labels, buttons, or badges), treat the image element as a background container. Position the `/default_image.png` as the background (or absolute underlay) and render ALL child elements positioned on top of it. Do NOT ignore any text or child elements; everything inside the image's boundaries must be rendered on top of it.
 `;
 
 /**

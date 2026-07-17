@@ -36,6 +36,18 @@ export function synthesizeApp(
     fs.mkdirSync(srcPath, { recursive: true });
   }
 
+  // Copy default_image.png to public directory if it exists in root
+  const publicPath = path.join(testingReactPath, "public");
+  const defaultImageSrc = path.join(process.cwd(), "default_image.png");
+  const defaultImageDest = path.join(publicPath, "default_image.png");
+  if (fs.existsSync(defaultImageSrc)) {
+    if (!fs.existsSync(publicPath)) {
+      fs.mkdirSync(publicPath, { recursive: true });
+    }
+    fs.copyFileSync(defaultImageSrc, defaultImageDest);
+    logger.info("Synthesizer", `Copied default_image.png to ${defaultImageDest}`);
+  }
+
   // 1. Synthesize App.jsx containing imports, local React wrappers, and main App assembly
   const jsxComponents = generatedCodes.map((c, idx) => {
     const compName = sections[idx]!.section_name.replace(/[^a-zA-Z0-9]/g, "");
