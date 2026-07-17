@@ -77,6 +77,7 @@ Used for collections of repeated items (e.g., features, testimonials, FAQ lists,
 - **ALWAYS group repeating parallel elements into a single 'Cards' element.** For example:
   - If a section contains a series of statistics (e.g., "21,000+" & "ACTIVE MEMBERS", "59" & "CITY CHAPTERS", "30+" & "YEARS OF EXCELLENCE"), do NOT create them as separate single elements. Instead, create a single CMS element with \`contentType: "Cards"\`, named e.g., \`statsCollection\`, and model each statistic block as a loop item containing \`field1\` (number value, e.g. "21,000+"), \`field2\` (label value, e.g. "ACTIVE MEMBERS"), etc.
   - If there are multiple testimonial cards, feature cards, partner/client logos, or team member blocks, group them into a single loop element.
+- **DO NOT group navigation bar links or header menu links into loops/cards.** Keep navigation links, footer menus, and action buttons (e.g. "Home", "About Us", "Events", "Login", "Sign Up") as individual single "Text" elements (e.g., \`homeLink\`, \`aboutUsLink\`, \`studentLoginButton\`, \`becomeMemberButton\`). This allows the coding agent to layout and style each menu item cleanly and individually.
 - Only create single "Text" or "Image" elements for non-repeating static section content (e.g., main headlines, intro descriptions, static logos, or primary CTA button labels).
 
 ### WHAT MUST ALWAYS BE A CMS ELEMENT:

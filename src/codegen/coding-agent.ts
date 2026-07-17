@@ -86,7 +86,10 @@ export default function {section_component_name}({ cmsData }) {
    - Use @media queries SCOPED under .section-{section_number}
    - Breakpoints: 768px (tablet), 1024px (desktop)
 6. Use modern CSS: flexbox, grid, clamp(), gap, aspect-ratio. No floats.
-7. Write clean, well-structured CSS with logical grouping and comments.
+7. **Navigation & Spacing Precision**:
+   - For navigation links and menu headers, ALWAYS set \`white-space: nowrap;\` so they never wrap text onto multiple lines.
+   - For navigation bars, ensure all components (logo, link row, action buttons) are vertically centered (\`align-items: center\`) and distributed cleanly. Do not apply massive vertical padding or solid background blocks directly to text unless the layout specifies it as a full-screen block.
+8. Write clean, well-structured CSS with logical grouping and comments.
 
 ### DUPLICATE DETECTION HANDLING (IMPORTANT):
 The object detection model sometimes produces overlapping bounding boxes — two SAME detections covering nearly the same area. When you see elements in the layout tree that appear to be duplicates (same text_content, overlapping coordinates, same class), you should:
@@ -107,9 +110,9 @@ The object detection model sometimes produces overlapping bounding boxes — two
 - Do NOT hardcode the CMS text strings. Always fetch via \`cmsData\`.
 
 Rule for image_media / logo / images:
-- **Strict Asset Source**: Whenever you render an image element (including `image_media`, `logo`, or any visual graphics), you MUST use `/default_image.png` as the image source. Do NOT use mock URLs, do NOT invent external placeholders, and do NOT leave the outline empty. Always set `src="/default_image.png"`.
+- **Strict Asset Source**: Whenever you render an image element (including \`image_media\`, \`logo\`, or any visual graphics), you MUST use \`/default_image.png\` as the image source. Do NOT use mock URLs, do NOT invent external placeholders, and do NOT leave the outline empty. Always set \`src = \"/default_image.png\"\`.
 - **Sizing**: Size the image using CSS width and height to match the element's bounding box.
-- **Nested Overlays**: If an image element contains child elements in the layout tree (such as text labels, buttons, or badges), treat the image element as a background container. Position the `/default_image.png` as the background (or absolute underlay) and render ALL child elements positioned on top of it. Do NOT ignore any text or child elements; everything inside the image's boundaries must be rendered on top of it.
+- **Nested Overlays**: If an image element contains child elements in the layout tree (such as text labels, buttons, or badges), treat the image element as a background container. Position the \`/default_image.png\` as the background (or absolute underlay) and render ALL child elements positioned on top of it. Do NOT ignore any text or child elements; everything inside the image's boundaries must be rendered on top of it.
 `;
 
 /**

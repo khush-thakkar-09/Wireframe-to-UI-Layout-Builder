@@ -2,194 +2,156 @@ import React, { useMemo, useState, useEffect } from 'react';
 import cmsDataRaw from './cms_data.json';
 import './index.css';
 
-function HeroSection({ cmsData }) {
-  // Extract fields for clean access from elements array
-  const mainHeadingEl = cmsData?.elements?.find(e => e.elementName === 'heroMainHeading');
-  const mainHeading = mainHeadingEl?.content || "NHRDN KEY MOMENTS";
-  const mainHeadingId = mainHeadingEl?.fieldId;
+function NavigationBar({ cmsData }) {
+  // Extract CMS data fields
+  const navLogoEl = cmsData?.elements?.find(e => e.elementName === 'navLogo');
+  const navLogo = navLogoEl?.content || "NHRD NETWORK";
+  const navLogoId = navLogoEl?.fieldId;
 
-  const subheadingPart1El = cmsData?.elements?.find(e => e.elementName === 'heroSubheadingPart1');
-  const subheadingPart1 = subheadingPart1El?.content || "Celebrating milestones and creating";
-  const subheadingPart1Id = subheadingPart1El?.fieldId;
+  const navLinksCollectionEl = cmsData?.elements?.find(e => e.elementName === 'navLinksCollection');
+  const navLinks = navLinksCollectionEl?.loop?.[0] || {};
 
-  const subheadingPart2El = cmsData?.elements?.find(e => e.elementName === 'heroSubheadingPart2');
-  const subheadingPart2 = subheadingPart2El?.content || "impact";
-  const subheadingPart2Id = subheadingPart2El?.fieldId;
+  const studentLoginBtnEl = cmsData?.elements?.find(e => e.elementName === 'studentLoginButton');
+  const studentLoginText = studentLoginBtnEl?.content || "Student Login";
+  const studentLoginId = studentLoginBtnEl?.fieldId;
+
+  const memberLoginBtnEl = cmsData?.elements?.find(e => e.elementName === 'memberLoginButton');
+  const memberLoginText = memberLoginBtnEl?.content || "Member Login";
+  const memberLoginId = memberLoginBtnEl?.fieldId;
+
+  const becomeMemberBtnEl = cmsData?.elements?.find(e => e.elementName === 'becomeMemberButton');
+  const becomeMemberText = becomeMemberBtnEl?.content || "Become A Member";
+  const becomeMemberId = becomeMemberBtnEl?.fieldId;
 
   return (
     <section className="section-1">
-      <div className="hero-content">
-        <h1 data-field-id={mainHeadingId} className="hero-main-heading">
-          {mainHeading}
-        </h1>
-        <div className="hero-subheading-container">
-          <h2 data-field-id={subheadingPart1Id} className="hero-subheading-part1">
-            {subheadingPart1}
-          </h2>
-          <h2 data-field-id={subheadingPart2Id} className="hero-subheading-part2">
-            {subheadingPart2}
-          </h2>
+      <nav className="nav-container">
+        {/* Logo */}
+        <div className="nav-logo">
+          <span data-field-id={navLogoId}>{navLogo}</span>
         </div>
-      </div>
+
+        {/* Navigation Links */}
+        <div className="nav-links">
+          {navLinks.field1 && <a href="#" data-field-id={navLinks.fieldId1}>{navLinks.field1}</a>}
+          {navLinks.field2 && <a href="#" data-field-id={navLinks.fieldId2}>{navLinks.field2}</a>}
+          {navLinks.field3 && <a href="#" data-field-id={navLinks.fieldId3}>{navLinks.field3}</a>}
+          {navLinks.field4 && <a href="#" data-field-id={navLinks.fieldId4}>{navLinks.field4}</a>}
+          {navLinks.field5 && <a href="#" data-field-id={navLinks.fieldId5}>{navLinks.field5}</a>}
+          {navLinks.field6 && <a href="#" data-field-id={navLinks.fieldId6}>{navLinks.field6}</a>}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="nav-actions">
+          <button className="btn-login" data-field-id={studentLoginId}>
+            {studentLoginText}
+          </button>
+          <button className="btn-login" data-field-id={memberLoginId}>
+            {memberLoginText}
+          </button>
+          <button className="btn-cta" data-field-id={becomeMemberId}>
+            {becomeMemberText}
+          </button>
+        </div>
+      </nav>
     </section>
   );
 }
 
-function EventCarousel({ cmsData }) {
+function HeroSection({ cmsData }) {
   // Extract fields for clean access from elements array
-  const event1ImageEl = cmsData?.elements?.find(e => e.elementName === 'eventCarouselMainImage1');
-  const event1CaptionEl = cmsData?.elements?.find(e => e.elementName === 'eventCarouselCaption1');
-  const event2ImageEl = cmsData?.elements?.find(e => e.elementName === 'eventCarouselMainImage2');
-  const event2CaptionEl = cmsData?.elements?.find(e => e.elementName === 'eventCarouselCaption2');
-  const event3ImageEl = cmsData?.elements?.find(e => e.elementName === 'eventCarouselMainImage3');
-  const event3CaptionEl = cmsData?.elements?.find(e => e.elementName === 'eventCarouselCaption3');
-  const prevBtnEl = cmsData?.elements?.find(e => e.elementName === 'carouselPrevButton');
-  const nextBtnEl = cmsData?.elements?.find(e => e.elementName === 'carouselNextButton');
+  const headlinePart1El = cmsData?.elements?.find(e => e.elementName === 'heroHeadlinePart1');
+  const headlinePart1 = headlinePart1El?.content || "Empowering India's";
+  const headlinePart1Id = headlinePart1El?.fieldId;
 
-  const event1Image = event1ImageEl?.content || "";
-  const event1Caption = event1CaptionEl?.content || "Event 1";
-  const event2Image = event2ImageEl?.content || "";
-  const event2Caption = event2CaptionEl?.content || "Event 2";
-  const event3Image = event3ImageEl?.content || "";
-  const event3Caption = event3CaptionEl?.content || "Event 3";
-  const prevBtnText = prevBtnEl?.content || "Previous";
-  const nextBtnText = nextBtnEl?.content || "Next";
+  const headlinePart2El = cmsData?.elements?.find(e => e.elementName === 'heroHeadlinePart2');
+  const headlinePart2 = headlinePart2El?.content || "HR Leaders of Tomorrow";
+  const headlinePart2Id = headlinePart2El?.fieldId;
 
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-  const totalEvents = 3;
+  const subheadlineEl = cmsData?.elements?.find(e => e.elementName === 'heroSubheadline');
+  const subheadline = subheadlineEl?.content || "Join the national apex body...";
+  const subheadlineId = subheadlineEl?.fieldId;
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? totalEvents - 1 : prev - 1));
-  };
+  const ctaJoinNetworkEl = cmsData?.elements?.find(e => e.elementName === 'ctaJoinNetwork');
+  const ctaJoinNetwork = ctaJoinNetworkEl?.content || "Join the Network";
+  const ctaJoinNetworkId = ctaJoinNetworkEl?.fieldId;
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === totalEvents - 1 ? 0 : prev + 1));
-  };
+  const ctaExploreChaptersEl = cmsData?.elements?.find(e => e.elementName === 'ctaExploreChapters');
+  const ctaExploreChapters = ctaExploreChaptersEl?.content || "Explore Chapters";
+  const ctaExploreChaptersId = ctaExploreChaptersEl?.fieldId;
+
+  const featureCardsEl = cmsData?.elements?.find(e => e.elementName === 'heroFeatureCards');
+  const featureCards = featureCardsEl?.loop || [];
 
   return (
     <section className="section-2">
-      <div className="carousel-container">
-        {/* Carousel Items */}
-        <div 
-          className="carousel-track"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {/* Event 1 */}
-          <div className="carousel-slide">
-            <div className="event-card">
-              <div className="event-image-wrapper">
-                <img 
-                  src={event1Image} 
-                  alt={event1Caption}
-                  className="event-image"
-                />
-              </div>
-              <h3 data-field-id={event1CaptionEl?.fieldId} className="event-caption">
-                {event1Caption}
-              </h3>
-            </div>
-          </div>
-
-          {/* Event 2 */}
-          <div className="carousel-slide">
-            <div className="event-card">
-              <div className="event-image-wrapper">
-                <img 
-                  src={event2Image} 
-                  alt={event2Caption}
-                  className="event-image"
-                />
-              </div>
-              <h3 data-field-id={event2CaptionEl?.fieldId} className="event-caption">
-                {event2Caption}
-              </h3>
-            </div>
-          </div>
-
-          {/* Event 3 */}
-          <div className="carousel-slide">
-            <div className="event-card">
-              <div className="event-image-wrapper">
-                <img 
-                  src={event3Image} 
-                  alt={event3Caption}
-                  className="event-image"
-                />
-              </div>
-              <h3 data-field-id={event3CaptionEl?.fieldId} className="event-caption">
-                {event3Caption}
-              </h3>
-            </div>
+      <div className="hero-container">
+        {/* Left Content */}
+        <div className="hero-content">
+          <h1 className="hero-headline">
+            <span data-field-id={headlinePart1Id} className="headline-part-1">{headlinePart1}</span>
+            <span data-field-id={headlinePart2Id} className="headline-part-2">{headlinePart2}</span>
+          </h1>
+          
+          <p data-field-id={subheadlineId} className="hero-subheadline">
+            {subheadline}
+          </p>
+          
+          <div className="hero-cta-group">
+            <button data-field-id={ctaJoinNetworkId} className="cta-button primary">
+              {ctaJoinNetwork}
+            </button>
+            <button data-field-id={ctaExploreChaptersId} className="cta-button secondary">
+              {ctaExploreChapters}
+            </button>
           </div>
         </div>
 
-        {/* Navigation Buttons */}
-        <button 
-          onClick={handlePrev}
-          className="carousel-btn prev-btn"
-          aria-label="Previous Event"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18L9 12L15 6" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span className="sr-only">{prevBtnText}</span>
-        </button>
-
-        <button 
-          onClick={handleNext}
-          className="carousel-btn next-btn"
-          aria-label="Next Event"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 18L15 12L9 6" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span className="sr-only">{nextBtnText}</span>
-        </button>
+        {/* Right Feature Cards */}
+        <div className="hero-features">
+          <div className="feature-grid">
+            {featureCards.map((card, idx) => (
+              <div key={idx} className="feature-card">
+                <h3 data-field-id={card.fieldId1} className="feature-title">{card.field1}</h3>
+                <div className="feature-stats">
+                  <span data-field-id={card.fieldId2} className="stat-number">{card.field2}</span>
+                  <span data-field-id={card.fieldId3} className="stat-desc">{card.field3}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Chess piece placeholder */}
+          <div className="chess-piece-container">
+            <img 
+              src="/default_image.png" 
+              alt="3D Red Chess Piece" 
+              className="chess-piece"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
-function CarouselPagination({ cmsData }) {
-  // Extract pagination dots and active indicator from CMS
-  const dots = [
-    cmsData?.elements?.find(e => e.elementName === 'paginationDot1'),
-    cmsData?.elements?.find(e => e.elementName === 'paginationDot2'),
-    cmsData?.elements?.find(e => e.elementName === 'paginationDot3'),
-    cmsData?.elements?.find(e => e.elementName === 'paginationDot4'),
-    cmsData?.elements?.find(e => e.elementName === 'paginationDot5'),
-    cmsData?.elements?.find(e => e.elementName === 'paginationDot6'),
-  ].filter(Boolean);
-
-  const activeIndicatorEl = cmsData?.elements?.find(e => e.elementName === 'paginationActiveIndicator');
-  const activeIndicatorId = activeIndicatorEl?.fieldId;
-
-  // Determine active dot index (for demo purposes, we'll assume first dot is active)
-  // In a real app, this would be controlled by the parent carousel component
-  const [activeIndex, setActiveIndex] = useState(0);
+function StatisticsFooter({ cmsData }) {
+  const statsCollectionEl = cmsData?.elements?.find(e => e.elementName === 'statsCollection');
+  const stats = statsCollectionEl?.loop || [];
 
   return (
     <section className="section-3">
-      <div className="pagination-container">
-        {dots.map((dot, index) => (
-          <button
-            key={dot?.fieldId || index}
-            className={`pagination-dot ${index === activeIndex ? 'active' : ''}`}
-            onClick={() => setActiveIndex(index)}
-            aria-label={`Go to slide ${index + 1}`}
-            aria-current={index === activeIndex ? 'page' : undefined}
-          >
-            <div className="dot-inner" />
-          </button>
+      <div className="stats-container">
+        {stats.map((stat, idx) => (
+          <div key={idx} className="stat-item">
+            <div className="stat-number" data-field-id={stat.fieldId1}>
+              {stat.field1}
+            </div>
+            <div className="stat-label" data-field-id={stat.fieldId2}>
+              {stat.field2}
+            </div>
+          </div>
         ))}
-        
-        {/* Active indicator element - rendered as a separate element if needed */}
-        {activeIndicatorEl && (
-          <div 
-            className="active-indicator" 
-            data-field-id={activeIndicatorId}
-          />
-        )}
       </div>
     </section>
   );
@@ -202,7 +164,7 @@ export default function App() {
   const [pendingChanges, setPendingChanges] = useState({});
   const [loading, setLoading] = useState(true);
   
-  const projectId = "nhrd4_a9ppm2";
+  const projectId = "nhrd1_r3i14c";
 
   useEffect(() => {
     fetch(`http://localhost:5001/api/cms/${projectId}`)
@@ -389,9 +351,9 @@ export default function App() {
       `}</style>
 
       <main className="app-container">
+        <NavigationBar cmsData={cmsData?.find(s => s?.metadata?.sectionName === "Navigation Bar")} />
         <HeroSection cmsData={cmsData?.find(s => s?.metadata?.sectionName === "Hero Section")} />
-        <EventCarousel cmsData={cmsData?.find(s => s?.metadata?.sectionName === "Event Carousel")} />
-        <CarouselPagination cmsData={cmsData?.find(s => s?.metadata?.sectionName === "Carousel Pagination")} />
+        <StatisticsFooter cmsData={cmsData?.find(s => s?.metadata?.sectionName === "Statistics Footer")} />
       </main>
     </div>
   );
